@@ -1,9 +1,15 @@
-import { combineReducers } from 'redux'
-import AppData from './reducer'
+import {combineReducers} from 'redux'
+import pizzas from './pizzas';
+import filter from './filter';
+import sortOrder from './sortOrder';
+import isLoading from './loading';
 
 export function getReducers() {
 	const reducers = {
-		AppData
+		filter,
+		isLoading,
+		pizzas,
+		sortOrder
 	};
 
 	return combineReducers(reducers);

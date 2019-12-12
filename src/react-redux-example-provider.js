@@ -1,7 +1,8 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 
-import {getFactories} from '../factory/react-redux-example-factory';
+import {getFactories} from './factory/react-redux-example-factory';
+import Container from './views'
 
 const {
     store
@@ -10,7 +11,7 @@ const {
 function ReactReduxExampleProvider() {
     return (
         <Provider store={store}>
-            {'TEST'}
+         <Container/>
         </Provider>
     );
 }

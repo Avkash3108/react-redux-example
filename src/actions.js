@@ -1,3 +1,5 @@
-export const FILTER_PIZZA_LIST = 'Filter Pizza List';
-export const LOAD_PIZZA_LIST = 'Load Pizza List';
-export const SORT_PIZZA_LIST = 'Sort Pizza List';
+export const FETCH_PIZZA_LIST = 'FETCH_PIZZA_LIST';
+export const SET_FILTER = 'SET_FILTER';
+export const SET_SORT_ORDER = 'SET_SORT_ORDER';
+export const STORE_PIZZA_LIST = 'STORE_PIZZA_LIST';
+
