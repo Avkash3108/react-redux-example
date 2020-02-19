@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-    "files": [
+  "files": [
     "/src"
   ],
   "scripts": {
+    "start-api": "node api",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@avkash3108/react_build_task": "1.6.0"
+    "@avkash3108/react_build_task": "1.8.0"
   },
   "devDependencies": {
     "isomorphic-fetch": "^2.2.1",

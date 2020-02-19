@@ -10,7 +10,7 @@ export function loadPizzaList(dispatch) {
     dispatch({
         type: FETCH_PIZZA_LIST
     });
-    	 fetch('../../pizza.json')
+    	 fetch('/pizzas')
             .then(function (response) {
                 if (response.status >= 400) {
                     throw new Error("Bad response from server");
