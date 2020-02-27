@@ -1,9 +1,8 @@
-import fetch from 'isomorphic-fetch';
 import React from 'react';
-import Loader from './loader/loader';
-import Filter from './filter';
-import Sort from './sort';
-import Pizzas from './pizzas/Pizzas';
+import Loader from '../loader/loader';
+import Filter from '../filter';
+import Sort from '../sort';
+import Pizzas from '../pizzas/Pizzas';
 
 class Container extends React.Component { 
     constructor(props) {

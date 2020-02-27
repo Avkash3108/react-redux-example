@@ -13,4 +13,3 @@ WebpackConfigExample.devServer.proxy = {
 	}
 };
 module.exports = WebpackConfigExample;
-

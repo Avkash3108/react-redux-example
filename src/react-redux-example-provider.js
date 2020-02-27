@@ -1,17 +1,21 @@
 import React from 'react';
 import {Provider} from 'react-redux';
+import {Router, hashHistory} from 'react-router';
 
 import {getFactories} from './factory/react-redux-example-factory';
-import Container from './views'
 
 const {
-    store
+    store,
+    routes
 } = getFactories();
 
 function ReactReduxExampleProvider() {
     return (
         <Provider store={store}>
-         <Container/>
+             <Router
+                 history={hashHistory}
+                 routes={routes}
+             />
         </Provider>
     );
 }

@@ -7,7 +7,7 @@
     "/src"
   ],
   "scripts": {
-    "start-api": "node api",
+    "start-api": "node api & json-server --watch api/db.json",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,10 +22,15 @@
     "@avkash3108/react_build_task": "1.8.0"
   },
   "devDependencies": {
+    "faker": "^4.1.0",
     "isomorphic-fetch": "^2.2.1",
+    "json-schema-faker": "^0.5.0-rc23",
+    "json-server": "^0.16.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-redux": "^7.1.3",
-    "redux": "^4.0.4"
+    "react-redux": "5.1.0",
+    "react-router": "3.2.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
   }
 }

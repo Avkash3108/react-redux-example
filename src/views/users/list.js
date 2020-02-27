@@ -1,13 +1,13 @@
 import React from 'react';
-import PizzaItem from './PizzaItem';
+import User from './user';
 
 const List = (props) => (
     <tbody>
-    {props.pizzas.map((item, key) =>
-        <PizzaItem
+    {props.users.map((item, key) =>
+        <User
             key={key}
             index={key}
-            pizza={item}
+            user={item}
         />)
     }
     </tbody>

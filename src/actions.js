@@ -1,5 +1,7 @@
 export const FETCH_PIZZA_LIST = 'FETCH_PIZZA_LIST';
+export const FETCH_USER_LIST = 'FETCH_USER_LIST';
 export const SET_FILTER = 'SET_FILTER';
 export const SET_SORT_ORDER = 'SET_SORT_ORDER';
 export const STORE_PIZZA_LIST = 'STORE_PIZZA_LIST';
+export const STORE_USER_LIST = 'STORE_USER_LIST';
 

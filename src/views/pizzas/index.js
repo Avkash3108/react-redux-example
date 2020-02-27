@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import * as actions from '../action-creators/actions';
-import Container from './Container';
+import * as actions from '../../action-creators/actions';
+import Container from './container';
 
 function mapStateToProps(state) {
 	const { pizzas, filter, sortOrder } = state;
@@ -17,7 +17,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         loadPizzaList: () => {
-        	actions.loadPizzaList(dispatch)
+        	dispatch(actions.loadPizzaList())
         }
     }
 }

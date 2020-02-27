@@ -1,17 +1,19 @@
-import {STORE_PIZZA_LIST } from '../actions'
+import {STORE_USER_LIST } from '../actions'
 
 function getDefaultState() {
 	return [];
 }
 
-function loadPizzList(state, action) {
+function loadUserList(state, action) {
 	return action.value;
 }
 
 export default function (state = getDefaultState(), action) {
 	const actions = {
-		[STORE_PIZZA_LIST] : loadPizzList
+		[STORE_USER_LIST] : loadUserList
 	}
+
+
 	const reducers = actions[action.type];
 
 	return reducers ? reducers(state, action) : state;
