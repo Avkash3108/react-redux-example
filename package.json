@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@avkash3108/react_build_task": "1.8.0"
+    "@avkash3108/react_build_task": "2.0.1"
   },
   "devDependencies": {
     "faker": "^4.1.0",

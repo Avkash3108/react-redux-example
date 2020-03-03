@@ -16,7 +16,7 @@ class Container extends React.Component {
     render() {
         return <div>
             {this.props.loading ? <Loader/> :
-                <div>
+                <div className={'table-container'}>
                 	<Filter/>
                     <Sort/>
                     <Users users={this.props.userList}/>

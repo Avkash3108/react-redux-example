@@ -1,16 +1,25 @@
 import React, {Component} from 'react';
-import Header from './Header';
-import List from './List';
+import Header from './header';
+import Pizza from './pizza';
 
 const Pizzas = (props) => {
 	return (
-        <table>
+        <div 
+            className={'flex-table pizza'}
+        >
             <Header/>
-            <List pizzas={props.pizzas}/>
-        </table>
+            {props.pizzas.map((item, key) =>
+                <Pizza
+                    key={key}
+                    index={key + 1}
+                    pizza={item}
+                />)
+            }
+        </div>
     );
 
 }
 
 export default Pizzas;
+
 

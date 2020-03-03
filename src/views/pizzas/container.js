@@ -2,7 +2,7 @@ import React from 'react';
 import Loader from '../loader/loader';
 import Filter from '../filter';
 import Sort from '../sort';
-import Pizzas from '../pizzas/Pizzas';
+import Pizzas from './Pizzas';
 
 class Container extends React.Component { 
     constructor(props) {
@@ -16,7 +16,7 @@ class Container extends React.Component {
     render() {
         return <div>
             {this.props.loading ? <Loader/> :
-                <div>
+                <div className={'table-container'}>
                 	<Filter/>
                     <Sort/>
                     <Pizzas pizzas={this.props.pizzaList}/>

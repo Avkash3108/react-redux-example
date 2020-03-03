@@ -3,6 +3,7 @@ import {Provider} from 'react-redux';
 import {Router, hashHistory} from 'react-router';
 
 import {getFactories} from './factory/react-redux-example-factory';
+import './styles/style.scss';
 
 const {
     store,

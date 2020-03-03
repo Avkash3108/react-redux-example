@@ -1,14 +1,14 @@
 import React from 'react';
 
 const Header = (props) => (
-    <thead>
-    <tr>
-        <td>S. No.</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>E-mail</td>
-    </tr>
-    </thead>
+    <div
+        className={'flex-row header'}
+    >
+        <div className="flex-cell sno">S. No.</div>
+        <div className="flex-cell first-name">First Name</div>
+        <div className="flex-cell last-name">Last Name</div>
+        <div className="flex-cell email">E-mail</div>
+    </div>
 )
 
 export default Header;

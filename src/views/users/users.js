@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import Header from './header';
-import List from './list';
+import User from './User';
 
 const Users = (props) => {
 	return (
-        <table>
+        <div 
+            className={'flex-table user'}
+        >
             <Header/>
-            <List users={props.users}/>
-        </table>
+            {props.users.map((item, key) =>
+                <User
+                    key={key}
+                    index={key + 1}
+                    user={item}
+                />)
+            }
+        </div>
     );
 
 }

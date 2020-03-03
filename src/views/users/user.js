@@ -1,12 +1,14 @@
 import React from 'react';
 
-const PizzaItem = (props) => (
-    <tr>
-        <td>{props.index}</td>
-        <td>{props.user.firstName}</td>
-        <td>{props.user.lastName}</td>
-        <td>{props.user.email}</td>
-    </tr>
+const User = (props) => (
+    <div
+        className={'flex-row'}
+    >
+        <div className={'flex-cell sno'}>{props.index}</div>
+        <div className={'flex-cell first-name'}>{props.user.firstName}</div>
+        <div className={'flex-cell last-name'}>{props.user.lastName}</div>
+        <div className={'flex-cell email'}>{props.user.email}</div>
+    </div>
 )
 
-export default PizzaItem;
+export default User;
