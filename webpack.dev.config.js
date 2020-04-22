@@ -1,4 +1,4 @@
-const WebpackConfigExample = require('@avkash3108/react_build_task').WebpackConfigExampleDevServer;
+const WebpackConfigExample = require('@avkash3108/react_build_task').WebpackDevServerConfig;
 
 WebpackConfigExample.devServer.proxy = {
 	'/**': {

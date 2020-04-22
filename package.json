@@ -7,8 +7,11 @@
     "/src"
   ],
   "scripts": {
+    "hello": "react-build-task hello",
+    "buildapp": "webpack --config webpack.prod.config.js",
+    "build": "react-build-task build",
     "start-api": "node api & json-server --watch api/db.json",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --config webpack.dev.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@avkash3108/react_build_task": "2.0.1"
+    "@avkash3108/react_build_task": "3.2.1"
   },
   "devDependencies": {
     "faker": "^4.1.0",
