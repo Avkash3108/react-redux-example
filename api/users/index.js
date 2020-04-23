@@ -6,8 +6,31 @@ var schema = {
       "minimum": 5,
       "maxItems": 10,
       "items": {
-        "type": "string",
-        "minimum": 5
+        "type": "object",
+        "properties": {
+          "availableSizes": {
+            "type": "string",
+            "enum": ['S, M, L', 'S, L', 'L', 'S M']
+          },
+          "id": {
+            "type": "integer",
+            "unique": true,
+            "minimum": 1
+          },
+          "name": {
+            "type": "string",
+            "faker": "random.word"
+          },
+          "price": {
+            "type": "string",
+            "faker": "finance.amount"
+          },
+          "category": {
+            "type": "string",
+            "enum": ['Veg', 'Non - Veg']
+          },
+        },
+        "required": ["availableSizes", "id", "name", "price", "category"]
       }
     },
     "users": {
@@ -33,9 +56,17 @@ var schema = {
           "email": {
             "type": "string",
             "faker": "internet.email"
+          },
+          "address": {
+            "type": "string",
+            "faker": "address.streetAddress"
+          },
+          "contact": {
+            "type": "string",
+            "faker": "phone.phoneNumber"
           }
         },
-        "required": ["id", "firstName", "lastName", "email"]
+        "required": ["id", "firstName", "lastName", "email", "address", "contact"]
       }
     }
   },

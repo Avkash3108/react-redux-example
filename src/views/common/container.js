@@ -2,7 +2,7 @@ import React from 'react';
 import Loader from '../loader/loader';
 import Filter from '../filter';
 import Sort from '../sort';
-import Users from './users';
+import DataTable from './index';
 
 class Container extends React.Component { 
     constructor(props) {
@@ -10,7 +10,7 @@ class Container extends React.Component {
     }
 
     componentDidMount() {
-     this.props.loadUserList();
+     this.props.loadData();
     }
     
     render() {
@@ -19,7 +19,7 @@ class Container extends React.Component {
                 <div className={'table-container'}>
                 	<Filter/>
                     <Sort/>
-                    <Users users={this.props.userList}/>
+                    <DataTable searchId={this.props.searchId}/>
                 </div>
             }
         </div>;

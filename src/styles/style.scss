@@ -20,21 +20,37 @@
          border-left: solid 1px $table-border;
          transition: 0.5s;
 
-         &.pizza {
+         &.pizzas {
              max-width: 388px;
 
              .pizza-name {
                  width: 328px
              }
+             .category,
+             .price {
+                 width: 100px
+             }
+             .available-sizes {
+                 width: 140px
+             }
+
          }
 
-         &.user {
+         &.users {
              .last-name,
              .first-name {
                   width: 220px
              }
 
-             .email {
+             .e-mail {
+                 width: 250px
+             }
+
+             .address {
+                 width: 250px
+             }
+
+              .contact {
                  width: 250px
              }
          }
