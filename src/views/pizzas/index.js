@@ -4,7 +4,6 @@ import Container from '../common/container';
 
 function mapStateToProps(state) {
     return {
-        loading: state.isLoading,
         searchId: 'pizzas'
     }
 }

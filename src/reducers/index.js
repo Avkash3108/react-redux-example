@@ -1,16 +1,18 @@
 import {combineReducers} from 'redux'
 import pizzas from './pizzas';
 import filter from './filter';
-import sortOrder from './sortOrder';
+import sort from './sortOrder';
 import isLoading from './loading';
 import users from './users';
+import {combineFetchStatusReducers} from './fetch-status'
 
 export function getReducers() {
 	const reducers = {
+		fetchStatus: combineFetchStatusReducers(),
 		filter,
 		isLoading,
 		pizzas,
-		sortOrder,
+		sort,
 		users
 	};
 

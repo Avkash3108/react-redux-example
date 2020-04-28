@@ -1,11 +1,14 @@
 import React from 'react';
 import {
 	cleanHeaderClass,
+    getDataKeys,
 	getHeaderKeys
 } from '../../services';
 import Header from './header';
 
 const Headers = (props) => {
+    const dataKeys = getDataKeys(props.searchId);
+
 	return (
 		<div
 		    className={'flex-row header'}
@@ -15,6 +18,7 @@ const Headers = (props) => {
              	    className={`flex-cell ${cleanHeaderClass(label)}`}
              	    label={label}
              	    key={`${label}${index}`}
+                    sortBy={dataKeys[index]}
              	/>
              )}
 		</div>

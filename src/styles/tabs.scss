@@ -1,0 +1,37 @@
+    .tabs {
+        background: $white;
+        display: flex;
+        font-size: 16px;
+        list-style-type: none;
+        margin-bottom: 0;
+        padding: 0 0 25px;
+        position: relative;
+        z-index: 1;
+
+        li:first-child {
+            border-left: 0;
+            padding-left: 0;
+        }
+
+        li {
+            border-left: 1px solid #e5e6e6;
+            display: inline;
+            font-size: 16px;
+            line-height: 1;
+            padding: 0 15px;
+
+            a {
+                border-bottom: 2px solid transparent;
+                color: $tab-clolors;
+                cursor: pointer;
+                font-size: 15px;
+                line-height: 1.15;
+                text-decoration: none;
+
+                &.active {
+                    border-bottom-color: $table-header;
+                    color: $tab-clolors;
+                }
+            }
+        }
+    }

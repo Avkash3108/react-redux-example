@@ -1,4 +1,5 @@
 import React from 'react';
+import Sort from './sort'
 
 const Header = (props) => {
 	return (
@@ -6,6 +7,10 @@ const Header = (props) => {
             className={props.className}
         >
             {props.label}
+            <Sort
+                sortBy={props.sortBy}
+            />
+
         </div>
     );
 };

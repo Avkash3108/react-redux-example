@@ -1,7 +1,6 @@
 import React from 'react';
-import Loader from '../loader/loader';
-import Filter from '../filter';
-import Sort from '../sort';
+import Loader from '../loader';
+import Tabs from './tabs/tabs';
 import DataTable from './index';
 
 class Container extends React.Component { 
@@ -14,15 +13,15 @@ class Container extends React.Component {
     }
     
     render() {
-        return <div>
-            {this.props.loading ? <Loader/> :
-                <div className={'table-container'}>
-                	<Filter/>
-                    <Sort/>
+        return (
+            <div className={'table-container'}>
+                    <Tabs/>
                     <DataTable searchId={this.props.searchId}/>
-                </div>
-            }
-        </div>;
+                    <Loader
+                        dataToCheck={['fetchPizzas', 'fetchUsers']}
+                    />
+            </div>
+        )
     }
 }
 

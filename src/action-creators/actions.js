@@ -61,9 +61,9 @@ export function setFilter(filter) {
 	}
 }
 
-export function setSortOrder(sortOrder) {
+export function setSortOrder(sortBy) {
     return {
-		type: SET_SORT_ORDER,
-		value: sortOrder ==='DESC'?'ASC':'DESC'
+        sortBy,
+		type: SET_SORT_ORDER
 	}
 }

@@ -1,12 +1,17 @@
-.react-redux-example {
-    $table-header: #1976D2;
-    $table-header-border: #1565C0;
-    $table-border: #d9d9d9;
-    $row-bg: #f4f2f1;
-    $white: #FFFFFF;
+@import './variables';
 
+.react-redux-example {
     div {
       box-sizing: border-box;
+    }
+
+    .sortable-icons {
+        cursor: pointer;
+        padding: 5px;
+
+        &.asc {
+            transform: rotate(180deg);
+        }
     }
 
     .table-container {
@@ -114,4 +119,7 @@
     .filter input {
         margin-left: 5px;
     }
+
+    @import './loader';
+    @import './tabs';
 }
