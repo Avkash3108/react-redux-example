@@ -3,7 +3,7 @@ var schema = {
   "properties": {
     "pizzas": {
       "type": "array",
-      "minimum": 500,
+      "minItems": 500,
       "maxItems": 1000,
       "items": {
         "type": "object",

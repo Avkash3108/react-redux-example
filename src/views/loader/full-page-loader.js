@@ -1,7 +1,7 @@
 import React from 'react';
 import {nullify} from '../common/Nullify'
 
-const Loader = (props) => {
+const FullPageLoader = (props) => {
 	return (
 		<div className="full-page-loader">
 		    <div className={'spinner'}>
@@ -15,5 +15,5 @@ const Loader = (props) => {
     );
 };
 
-Loader.displayName = 'Loader';
-export default nullify(Loader, (props) => !props.isLoading);
+FullPageLoader.displayName = 'FullPageLoader';
+export default nullify(FullPageLoader, (props) => !props.isLoading);

@@ -1,6 +1,7 @@
 import {
 	FETCH_PIZZA_LIST,
-	STORE_USER_LIST
+	STORE_USER_LIST,
+	STORE_MORE_USERS,
 } from '../actions'
 
 function getDefaultState() {
@@ -8,13 +9,24 @@ function getDefaultState() {
 }
 
 function loadUserList(state, action) {
-	return action.value;
+	return action.data;
+}
+
+
+function loadMoreUsers(state, action) {
+	const haveMore = action.data !== null && action.data.length !== 0;
+
+	return haveMore ? [
+	    ...state,
+	    ...action.data
+	] :  state
 }
 
 export default function (state = getDefaultState(), action) {
 	const actions = {
 		[FETCH_PIZZA_LIST]: getDefaultState,
-		[STORE_USER_LIST] : loadUserList
+		[STORE_USER_LIST] : loadUserList,
+		[STORE_MORE_USERS] : loadMoreUsers
 	}
 
 

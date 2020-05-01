@@ -12,6 +12,12 @@ function mapDispatchToProps(dispatch) {
     return {
         loadData: () => {
         	dispatch(actions.loadPizzaList())
+        },
+        loadMoreData: () => {
+        	dispatch(actions.loadMorePizzas())
+        },
+        resetState: () => {
+            dispatch(actions.resetState());
         }
     }
 }

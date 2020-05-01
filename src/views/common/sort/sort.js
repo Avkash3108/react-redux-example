@@ -17,7 +17,7 @@ function isAscendingClassName(order) {
 const Sort = (props) => (
     <div
         className={`sortable-icons ${isAscendingClassName(props.sortOrder)}`}
-        onClick={props.onSort}
+        onClick={props.onSorting}
     >
         {getSortIcon(props.sortOrder)}
         

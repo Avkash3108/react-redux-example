@@ -1,0 +1,13 @@
+{
+	"FIRST_NAME": "First Name",
+	"LAST_NAME": "Last Name",
+	"E_MAIL": "E Mail",
+	"ADDRESS": "Address",
+	"CONTACT": "Contact",
+	"PIZZA_NAME": "Pizza Name",
+	"PRICE": "Price",
+	"AVAILABLE_SIZES": "Available Sizes",
+	"CATEGORY": "Category",
+	"PIZZA": "PIZZA",
+	"USER": "USER"
+}

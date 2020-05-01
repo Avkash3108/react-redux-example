@@ -10,10 +10,22 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch, ownProps) {
     return {
-        onSort: () => {
+        onSorting: () => {
         	dispatch(actions.setSortOrder(ownProps.sortBy));
+        	
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sort)
+function mergeProps(stateProps, dispatchProps, ownProps) {
+	return {
+		...stateProps,
+		...ownProps,
+		onSorting: () => {
+			dispatchProps.onSorting();
+			ownProps.onSort();
+		}
+	};
+
+}
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Sort)

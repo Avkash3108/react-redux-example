@@ -2,7 +2,7 @@ import React from 'react';
 import {
 	cleanDataClass,
 	getDataKeys
-} from '../../services';
+} from '../../helpers';
 import Column from './column';
 
 const Row = (props) => {
@@ -14,7 +14,7 @@ const Row = (props) => {
              	<Column
              	    className={`flex-cell ${cleanDataClass(value)}`}
              	    value={props.item[value]}
-             	    key={`${props.item[value]}${index}`}
+             	    key={`${props.item.id}-${index}`}
              	/>
              )}
 		</div>

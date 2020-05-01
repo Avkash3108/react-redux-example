@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 
+import {FormattedMessage} from 'react-intl';
+
 const Tabs = (props) => {
 	return (
         <ul 
@@ -11,7 +13,7 @@ const Tabs = (props) => {
                     activeClassName={'active'}
                     to={'/pizzas'}
                 >
-                    {'PIZZA'}
+                    <FormattedMessage id={'PIZZA'}/>
                 </Link>
 
             </li>
@@ -20,7 +22,7 @@ const Tabs = (props) => {
                     activeClassName={'active'}
                     to={'/users'}
                 >
-                    {'USER'}
+                    <FormattedMessage id={'USER'}/>
                 </Link>
             </li>
         </ul>

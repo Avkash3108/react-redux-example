@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import Loader from './loader';
+import FullPageLoader from './full-page-loader';
 
 function mapStateToProps(state, ownProps) {
     const isLoading = ownProps.dataToCheck.some((service) => {
@@ -10,4 +10,4 @@ function mapStateToProps(state, ownProps) {
     }
 }
 
-export default connect(mapStateToProps)(Loader)
+export default connect(mapStateToProps)(FullPageLoader)

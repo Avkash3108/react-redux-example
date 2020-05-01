@@ -1,7 +1,8 @@
 import {
 	FETCH_PIZZA_LIST,
 	FETCH_USER_LIST,
-	SET_SORT_ORDER
+	SET_SORT_ORDER,
+	RESET_STATE
 } from '../actions'
 
 function getDefaultState() {
@@ -27,9 +28,8 @@ function setSortOrder(state, action) {
 
 export default function (state = getDefaultState(), action) {
 	const actions = {
-		[FETCH_PIZZA_LIST] : getDefaultState,
-		[FETCH_USER_LIST] : getDefaultState,
-		[SET_SORT_ORDER] : setSortOrder
+		[SET_SORT_ORDER] : setSortOrder,
+		[RESET_STATE]: getDefaultState
 	}
 
 	const reducers = actions[action.type];
