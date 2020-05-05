@@ -1,4 +1,0 @@
-{
-  "port": 2222,
-  "watch": "./api/db.json"
-}

@@ -25,7 +25,8 @@ export function loadPizzaList(dispatch) {
             '_page': 1,
             '_limit': 100,
             '_sort': state.sort.sortBy,
-            '_order': state.sort.sortOrder
+            '_order': state.sort.sortOrder,
+            'q': state.filter
 
         };
         return fetchData('/pizzas', queryObject)
@@ -50,7 +51,8 @@ export function loadMorePizzas(dispatch) {
             '_page': lastPage,
             '_limit': 100,
             '_sort': state.sort.sortBy,
-            '_order': state.sort.sortOrder
+            '_order': state.sort.sortOrder,
+            'q': state.filter
 
         };
 
@@ -77,7 +79,8 @@ export function loadMoreUsers(dispatch) {
             '_page': lastPage,
             '_limit': 100,
             '_sort': state.sort.sortBy,
-            '_order': state.sort.sortOrder
+            '_order': state.sort.sortOrder,
+            'q': state.filter
 
         };
         return fetchData('/users', queryObject)
@@ -102,7 +105,8 @@ export function loadUserList(dispatch) {
             '_page': 1,
             '_limit': 100,
             '_sort': state.sort.sortBy,
-            '_order': state.sort.sortOrder
+            '_order': state.sort.sortOrder,
+            'q': state.filter
 
         };
         return fetchData('/users', queryObject)

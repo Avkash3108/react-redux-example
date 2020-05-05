@@ -6,7 +6,7 @@ import {
 
 } from './fetch-helper';
 
-export const fetchData = (endpoint, queryObject ={}) => {
+export const fetchData = (endpoint, queryObject = {}) => {
     const query = buildQueryString(queryObject);
 
     return fetch(`${endpoint}${query}`, getDefaultFetchOptions())

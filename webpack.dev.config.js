@@ -7,7 +7,7 @@ WebpackConfigExample.devServer.proxy = {
                 return request.url;
             }
 		},
-		target: 'http://localhost:2222',
+		target: 'http://localhost:3000',
 		secure: false,
         changeOrigin: true
 	}

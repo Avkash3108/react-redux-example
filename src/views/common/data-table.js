@@ -5,6 +5,7 @@ import Sticky from 'react-stickynode';
 import Infinite from 'react-infinite';
 import InfiniteScroll from 'react-infinite-scroller';
 import InfiniteLoader from '../loader/infinite-loader';
+import Filter from '../filter';
 
 function renderTable(props) {
     let table;
@@ -15,7 +16,7 @@ function renderTable(props) {
         table = (
             <InfiniteScroll
                 pageStart={0}
-                loader={<InfiniteLoader/>}
+                loader={<InfiniteLoader key={'infinite-loader'}/>}
                 hasMore={props.moreDataLoading ? false : !props.allDataFetched}
                 loadMore={props.loadMoreData}
                 threshold={500}
@@ -39,9 +40,12 @@ const DataTable = (props) => {
         <div 
             className={`flex-table ${props.searchId}`}
         >
+            <Filter
+                onFilter={props.loadData}
+            />
             <Sticky>
                 <Headers
-                    onSort={props.onSort}
+                    onSort={props.loadData}
                     searchId={props.searchId}
                 />
             </Sticky>
@@ -52,4 +56,3 @@ const DataTable = (props) => {
 }
 
 export default DataTable;
-

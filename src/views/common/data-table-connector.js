@@ -20,7 +20,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch, ownProps) {
     return {
-        onSort: () => {
+        loadData: () => {
             return {
                 'pizzas': () => dispatch(actions.loadPizzaList()),
                 'users': () => dispatch(actions.loadUserList())
