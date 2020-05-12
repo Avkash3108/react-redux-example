@@ -2,6 +2,7 @@ import {combineReducers} from 'redux'
 import pizzas from './pizzas';
 import filter from './filter';
 import sort from './sort-order';
+import routing from './routing';
 import users from './users';
 import {combineFetchStatusReducers} from './fetch-status'
 import allDataFetched from './all-data-fetched';
@@ -15,6 +16,7 @@ export function getReducers() {
 		filter,
 		lastFetchedPage,
 		pizzas,
+		routing,
 		sort,
 		users
 	};

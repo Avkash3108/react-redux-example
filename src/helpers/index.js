@@ -52,14 +52,3 @@ export function cleanDataClass(name) {
 		category: 'category'
 	}[name];
 }
-
-export function filterList(list, sort) {
-	if (sort.sortOrder && sort.sortBy) {
-		const sortType = sort.sortBy;
-		return list.sort(function (a, b) {
-			return sort.sortOrder == 'DESC' ? b[sortType].toLowerCase().localeCompare(a[sortType].toLowerCase()) : a[sortType].toLowerCase().localeCompare(b[sortType].toLowerCase());
-		});
-	}
-	
-	return list;
-}

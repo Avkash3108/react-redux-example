@@ -9,7 +9,7 @@ function getDefaultState() {
 }
 
 function loadPizzList(state, action) {
-	return action.data;
+	return action.data !== null ? action.data : getDefaultState();
 }
 
 function loadMorePizzas(state, action) {

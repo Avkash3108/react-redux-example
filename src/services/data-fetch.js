@@ -1,15 +1,16 @@
-import fetch from 'isomorphic-fetch';
+import 'isomorphic-fetch';
 import {
 	buildQueryString,
 	getDefaultFetchOptions,
 	throwError,
 
-} from './fetch-helper';
+} from '../helpers/fetch-helper';
 
 export const fetchData = (endpoint, queryObject = {}) => {
     const query = buildQueryString(queryObject);
+    const serviceEndpoint = `${endpoint}${query}`;
 
-    return fetch(`${endpoint}${query}`, getDefaultFetchOptions())
+    return fetch(serviceEndpoint, getDefaultFetchOptions())
         .then((response) => response.json())
         .catch(throwError)	
 }

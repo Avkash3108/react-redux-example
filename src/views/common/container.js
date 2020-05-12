@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import FullPageLoader from '../loader';
 import Tabs from './tabs/tabs';
 import DataTable from './data-table-connector';
@@ -33,5 +35,13 @@ class Container extends React.Component {
     }
 }
 
+Container.displayName = 'Container';
+Container.propTypes = {
+    loadData: PropTypes.func.isRequired,
+    loadMoreData: PropTypes.func.isRequired,
+    resetState: PropTypes.func.isRequired,
+    searchId: PropTypes.string.isRequired
+
+};
 
 export default Container;

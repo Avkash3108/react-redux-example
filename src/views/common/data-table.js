@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
 import Headers from './headers';
 import Row from './Row';
 import Sticky from 'react-stickynode';
@@ -40,9 +42,6 @@ const DataTable = (props) => {
         <div 
             className={`flex-table ${props.searchId}`}
         >
-            <Filter
-                onFilter={props.loadData}
-            />
             <Sticky>
                 <Headers
                     onSort={props.loadData}
@@ -54,5 +53,17 @@ const DataTable = (props) => {
     );
 
 }
+
+DataTable.displayName = 'DataTable';
+DataTable.propTypes = {
+    allDataFetched: PropTypes.bool,
+    data: PropTypes.array.isRequired,
+    dataLoading: PropTypes.bool.isRequired,
+    loadData: PropTypes.func.isRequired,
+    loadMoreData: PropTypes.func.isRequired,
+    moreDataLoading: PropTypes.bool,
+    searchId: PropTypes.string.isRequired
+
+};
 
 export default DataTable;

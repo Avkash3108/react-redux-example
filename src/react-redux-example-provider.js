@@ -1,11 +1,12 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import {Router, hashHistory} from 'react-router';
+import {Router} from 'react-router';
 
 import {getFactories} from './factory/react-redux-example-factory';
 import './styles/style.scss';
 
 const {
+    history,
     store,
     routes
 } = getFactories();
@@ -14,7 +15,7 @@ function ReactReduxExampleProvider() {
     return (
         <Provider store={store}>
              <Router
-                 history={hashHistory}
+                 history={history}
                  routes={routes}
              />
         </Provider>

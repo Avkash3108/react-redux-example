@@ -9,14 +9,20 @@ module.exports = {
 	],
 	coverageThreshold: {
 		global: {
-			branches: 80,
-            functions: 80,
-            lines: 80,
-            statements: -10
+			branches: 100,
+            functions: 100,
+            lines: 100,
+            statements: 100
       }
     },
     setupFilesAfterEnv: ['./test/utils/test-setup.js'],
      testMatch: [
         '<rootDir>/test/unit/**/*.spec.js'
-    ]
+    ],
+    resetModules: true,
+    restoreMocks: true,
+    moduleNameMapper: {
+    	 '\\.(css|scss)$': '<rootDir>/test/utils/style.js',
+    	 '\\.(jpg|png|svg|jpeg)$': '<rootDir>/test/utils/style.js'
+    }
 }

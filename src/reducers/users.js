@@ -1,7 +1,7 @@
 import {
 	FETCH_PIZZA_LIST,
 	STORE_USER_LIST,
-	STORE_MORE_USERS,
+	STORE_MORE_USERS
 } from '../actions'
 
 function getDefaultState() {
@@ -9,7 +9,7 @@ function getDefaultState() {
 }
 
 function loadUserList(state, action) {
-	return action.data;
+	return action.data !== null ? action.data : getDefaultState();
 }
 
 

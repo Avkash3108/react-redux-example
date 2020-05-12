@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
 	cleanDataClass,
 	getDataKeys
@@ -19,6 +21,13 @@ const Row = (props) => {
              )}
 		</div>
     );
+};
+
+Row.displayName = 'Row';
+Row.propTypes = {
+    item: PropTypes.object.isRequired,
+    searchId: PropTypes.string.isRequired
+
 };
 
 export default Row;

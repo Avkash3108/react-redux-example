@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
 	cleanHeaderClass,
     getDataKeys,
@@ -24,6 +26,13 @@ const Headers = (props) => {
              )}
 		</div>
     );
+};
+
+Headers.displayName = 'Headers';
+Headers.propTypes = {
+    onSort: PropTypes.func.isRequired,
+    searchId: PropTypes.string.isRequired
+
 };
 
 export default Headers;

@@ -26,7 +26,7 @@ export const buildQueryString = (queryObject) => {
 	const queryparams = Object.keys(queryObject);
 
 	const query = queryparams.reduce((acc, param) => {
-		return queryObject[param] !== undefined &&  queryObject[param] !== null ?
+		return queryObject[param] !== undefined &&  queryObject[param] !== null && queryObject[param] !== '' ?
 		    acc.concat(`${param}=${queryObject[param]}`) : acc;
 	},[]);
 

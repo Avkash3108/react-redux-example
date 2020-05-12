@@ -1,6 +1,4 @@
 import {
-	FETCH_PIZZA_LIST,
-	FETCH_USER_LIST,
 	SET_SORT_ORDER,
 	RESET_STATE
 } from '../actions'
@@ -9,7 +7,6 @@ function getDefaultState() {
 	return {
 		sortOrder: null,
 		sortBy: null
-
 	}
 }
 

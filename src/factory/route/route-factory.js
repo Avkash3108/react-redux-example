@@ -8,7 +8,7 @@ import AppProvider from '../../views/app-provider';
 import Pizzas from '../../views/pizzas/index';
 import Users from '../../views/users/index';
 
-export function getRoutes(argument) {
+export function getRoutes() {
 	return createRoutes(
         <Route
             component={AppProvider}

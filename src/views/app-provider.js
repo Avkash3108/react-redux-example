@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import {IntlProvider} from "react-intl";
 import messages from '../i18n/en.json';
@@ -16,5 +17,10 @@ function AppProvider(props) {
         </IntlProvider>
 	);
 }
+
+AppProvider.displayName = 'AppProvider';
+AppProvider.propTypes = {
+	children: PropTypes.element
+};
 
 export default AppProvider;

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import IconUnSorted from './icon-unsorted';
 import IconSorted from './icon-sorted';
 
@@ -23,5 +25,12 @@ const Sort = (props) => (
         
     </div>
 );
+
+Sort.displayName = 'Sort';
+Sort.propTypes = {
+    onSorting: PropTypes.func.isRequired,
+    sortOrder: PropTypes.string.isRequired
+
+};
 
 export default Sort;

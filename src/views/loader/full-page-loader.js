@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {nullify} from '../common/Nullify'
 
 const FullPageLoader = (props) => {
@@ -16,4 +18,8 @@ const FullPageLoader = (props) => {
 };
 
 FullPageLoader.displayName = 'FullPageLoader';
+FullPageLoader.propTypes = {
+    isLoading: PropTypes.bool.isRequired,
+};
+
 export default nullify(FullPageLoader, (props) => !props.isLoading);

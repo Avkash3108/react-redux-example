@@ -1,7 +1,7 @@
 import React from 'react';
 import {nullify} from '../common/Nullify'
 
-const InfiniteLoader = (props) => {
+const InfiniteLoader = () => {
 	return (
 		    <div className={'spinner loader'}>
 		        <div className="rect1"/>

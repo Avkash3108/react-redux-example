@@ -11,11 +11,10 @@ import {
     STORE_USER_LIST,
     RESET_STATE
 } from '../actions'
-import fetch from 'isomorphic-fetch';
 
 import {fetchData} from '../services/data-fetch';
 
-export function loadPizzaList(dispatch) {
+export function loadPizzaList() {
     return (dispatch, getState) => {
         dispatch({
             type: FETCH_PIZZA_LIST
@@ -40,7 +39,7 @@ export function loadPizzaList(dispatch) {
     };
 }
 
-export function loadMorePizzas(dispatch) {
+export function loadMorePizzas() {
     return(dispatch, getState) => {
         dispatch({
             type: FETCH_MORE_PIZZAS
@@ -68,7 +67,7 @@ export function loadMorePizzas(dispatch) {
     };
 }
 
-export function loadMoreUsers(dispatch) {
+export function loadMoreUsers() {
     return(dispatch, getState) => {
         dispatch({
             type: FETCH_MORE_USERS
@@ -95,7 +94,7 @@ export function loadMoreUsers(dispatch) {
     };
 }
 
-export function loadUserList(dispatch) {
+export function loadUserList() {
     return(dispatch, getState) => {
         dispatch({
             type: FETCH_USER_LIST

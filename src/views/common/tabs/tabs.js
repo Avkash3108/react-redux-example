@@ -30,5 +30,7 @@ const Tabs = (props) => {
 
 }
 
+Tabs.displayName = 'Tabs';
+
 export default Tabs;
 
