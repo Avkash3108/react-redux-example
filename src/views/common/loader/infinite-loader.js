@@ -1,5 +1,4 @@
 import React from 'react';
-import {nullify} from '../common/Nullify'
 
 const InfiniteLoader = () => {
 	return (

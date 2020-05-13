@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {nullify} from '../common/Nullify'
+import {nullify} from '../Nullify'
 
 const FullPageLoader = (props) => {
 	return (

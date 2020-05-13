@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FullPageLoader from '../loader';
+import FullPageLoader from './loader';
 import Tabs from './tabs/tabs';
 import DataTable from './data-table-connector';
 
@@ -28,7 +28,7 @@ class Container extends React.Component {
                         loadMoreData={this.props.loadMoreData}
                     />
                     <FullPageLoader
-                        dataToCheck={['fetchPizzas', 'fetchUsers']}
+                        servicesToCheck={['fetchPizzas', 'fetchUsers']}
                     />
             </div>
         )

@@ -6,8 +6,7 @@ import Row from './Row';
 import Sticky from 'react-stickynode';
 import Infinite from 'react-infinite';
 import InfiniteScroll from 'react-infinite-scroller';
-import InfiniteLoader from '../loader/infinite-loader';
-import Filter from '../filter';
+import InfiniteLoader from './loader/infinite-loader';
 
 function renderTable(props) {
     let table;
