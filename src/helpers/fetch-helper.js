@@ -1,16 +1,16 @@
 export function getDefaultFetchOptions(otherHeaderOptions) {
-	const fetchOptions = {};
-	const defaultHeaders = {
+    const fetchOptions = {};
+    const defaultHeaders = {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     };
 
     fetchOptions.headers = {
-    	...defaultHeaders,
-    	...otherHeaderOptions
+        ...defaultHeaders,
+        ...otherHeaderOptions
     };
 
-    return fetchOptions
+    return fetchOptions;
 }
 
 export const throwError = (error) => {
@@ -20,15 +20,15 @@ export const throwError = (error) => {
         });
     }
     return error;
-}
+};
 
 export const buildQueryString = (queryObject) => {
-	const queryparams = Object.keys(queryObject);
+    const queryparams = Object.keys(queryObject);
 
-	const query = queryparams.reduce((acc, param) => {
-		return queryObject[param] !== undefined &&  queryObject[param] !== null && queryObject[param] !== '' ?
-		    acc.concat(`${param}=${queryObject[param]}`) : acc;
-	},[]);
+    const query = queryparams.reduce((acc, param) => {
+        return queryObject[param] !== undefined &&  queryObject[param] !== null && queryObject[param] !== '' ?
+            acc.concat(`${param}=${queryObject[param]}`) : acc;
+    },[]);
 
-	return query.length ? `?${query.join('&')}` : ''; 
-}
+    return query.length ? `?${query.join('&')}` : '';
+};

@@ -10,7 +10,7 @@ jest.mock('../../src/factory/react-redux-example-factory', () => {
     const expectedHistory = Object.freeze({
         the: 'history'
     });
-	const expectedRoutes = Object.freeze({
+    const expectedRoutes = Object.freeze({
         the: 'routes'
     });
     const expectedStore = Object.freeze({
@@ -21,34 +21,34 @@ jest.mock('../../src/factory/react-redux-example-factory', () => {
     });
 
     return {
-    	getFactories: () => {
-    		return {
+        getFactories: () => {
+            return {
                 history: expectedHistory,
-    		    routes: expectedRoutes,
+                routes: expectedRoutes,
                 store: expectedStore
-    	    };
-    	}
+            };
+        }
     };
 });
 
 describe('React Redux Example Provider', () => {
-	const render = () => {
-	    return shallow(<ReactReduxExampleProvider/>);
-	}
+    const render = () => {
+        return shallow(<ReactReduxExampleProvider/>);
+    };
 
-	it('should be store provider', () => {
-		const component = render();
+    it('should be store provider', () => {
+        const component = render();
 
-		expect(component.type()).toStrictEqual(Provider);
+        expect(component.type()).toStrictEqual(Provider);
         expect(component.props().store).toStrictEqual(getFactories().store);
-	});
+    });
 
-	it('should render router', () => {
-		const component = render();
-		const router = component.children();
+    it('should render router', () => {
+        const component = render();
+        const router = component.children();
 
         expect(router.type()).toStrictEqual(Router);
-	});
+    });
 
    it('should be configured with history', () => {
         const component = render();
@@ -57,7 +57,7 @@ describe('React Redux Example Provider', () => {
         expect(router.props().history).toStrictEqual(getFactories().history);
     });
 
-	it('should apply routes from the route factory', () => {
+    it('should apply routes from the route factory', () => {
         const component = render();
         const router = component.children();
 

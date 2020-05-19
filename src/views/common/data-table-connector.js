@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
 import DataTable from './data-table';
 import {
-	getServiceReducerKey,
-	getLoadMoreDataReducerKey
+    getServiceReducerKey,
+    getLoadMoreDataReducerKey
 } from '../../helpers';
 import * as actions from '../../action-creators/actions';
 
@@ -11,11 +11,11 @@ function mapStateToProps(state, ownProps) {
     const dataLoading = initialFetchStatus === 'FETCHING' || initialFetchStatus === 'NA';
 
     return {
-    	allDataFetched: state.allDataFetched,
-    	dataLoading,
+        allDataFetched: state.allDataFetched,
+        dataLoading,
         data: state[ownProps.searchId],
         moreDataLoading: state.fetchStatus.serviceData[getLoadMoreDataReducerKey(ownProps.searchId)] === 'FETCHING'
-    }
+    };
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
@@ -27,7 +27,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 
             }[ownProps.searchId]();
         }
-    }
+    };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DataTable)
+export default connect(mapStateToProps, mapDispatchToProps)(DataTable);

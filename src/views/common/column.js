@@ -7,7 +7,7 @@ const Column = (props) => (
     >
         {props.value}
     </div>
-)
+);
 
 Column.displayName = 'Column';
 Column.propTypes = {

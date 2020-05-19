@@ -1,13 +1,13 @@
 import {
-	SET_SORT_ORDER,
-	RESET_STATE
-} from '../actions'
+    SET_SORT_ORDER,
+    RESET_STATE
+} from '../actions';
 
 function getDefaultState() {
-	return {
-		sortOrder: null,
-		sortBy: null
-	}
+    return {
+        sortOrder: null,
+        sortBy: null
+    };
 }
 
 function getSortOrder(state) {
@@ -24,12 +24,12 @@ function setSortOrder(state, action) {
 }
 
 export default function (state = getDefaultState(), action) {
-	const actions = {
-		[SET_SORT_ORDER] : setSortOrder,
-		[RESET_STATE]: getDefaultState
-	}
+    const actions = {
+        [SET_SORT_ORDER] : setSortOrder,
+        [RESET_STATE]: getDefaultState
+    };
 
-	const reducers = actions[action.type];
+    const reducers = actions[action.type];
 
-	return reducers ? reducers(state, action) : state;
+    return reducers ? reducers(state, action) : state;
 }

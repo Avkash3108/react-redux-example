@@ -8,7 +8,7 @@ function mapDispatchToProps(dispatch, ownProps) {
             dispatch(actions.setFilter(filter));
             ownProps.onFilter();
         }
-    }
+    };
 }
 
-export default connect(undefined ,mapDispatchToProps)(Filter)
+export default connect(undefined ,mapDispatchToProps)(Filter);

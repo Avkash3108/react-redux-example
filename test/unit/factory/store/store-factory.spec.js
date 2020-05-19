@@ -8,17 +8,17 @@ import * as reducerFactory  from '../../../../src/reducers';
 import * as storeFactory from '../../../../src/factory/store/store-factory';
 
 describe('Application Store Factory', () => {
-	 let createStoreStub, reducerFactoryStub, expectedStore, reducer, routerMiddleware, thunkMiddleware, unAppliedRouterMiddleware, composedMiddlewares;
+     let createStoreStub, reducerFactoryStub, expectedStore, reducer, routerMiddleware, thunkMiddleware, unAppliedRouterMiddleware, composedMiddlewares;
 
     function makeFakeObjects() {
-    	composedMiddlewares = 'composedMiddlewares';
+        composedMiddlewares = 'composedMiddlewares';
         expectedStore = 'expectedStore';
         reducer = 'reducer';
         unAppliedRouterMiddleware = 'unAppliedRouterMiddleware';
         routerMiddleware = 'routerMiddleware';
         thunkMiddleware = 'thunkMiddleware';
     }
-    
+
     function stubObjects() {
     when(jest.spyOn(reactRouterRedux, 'routerMiddleware'))
         .calledWith(hashHistory)
@@ -35,30 +35,30 @@ describe('Application Store Factory', () => {
         .mockReturnValue(composedMiddlewares);
 
     reducerFactoryStub = jest.spyOn(reducerFactory, 'getReducers');
-    reducerFactoryStub.mockReturnValue(reducer);                    
+    reducerFactoryStub.mockReturnValue(reducer);
 
     createStoreStub = jest.spyOn(reduxUtils, 'createStore');
     createStoreStub.mockReturnValue(expectedStore);
-    } 
+    }
 
     beforeEach(() => {
-    	makeFakeObjects();
-    	stubObjects();
+        makeFakeObjects();
+        stubObjects();
     });
 
     afterEach(() => {});
 
     describe('Create Store', () => {
-    	it('Should Create Store using reducers with composing thunk middleware, router middleware', () => {
-    		storeFactory.getStore();
+        it('Should Create Store using reducers with composing thunk middleware, router middleware', () => {
+            storeFactory.getStore();
 
-    		expect(createStoreStub).toHaveBeenCalledWith(reducer, composedMiddlewares)
-    	});
+            expect(createStoreStub).toHaveBeenCalledWith(reducer, composedMiddlewares);
+        });
 
-    	it('Should get all reducers from reducer factory when creating store', () => {
-    		storeFactory.getStore();
+        it('Should get all reducers from reducer factory when creating store', () => {
+            storeFactory.getStore();
 
-    		expect(reducerFactoryStub).toHaveBeenCalledTimes(1);
-    	});
+            expect(reducerFactoryStub).toHaveBeenCalledTimes(1);
+        });
     });
 });

@@ -28,7 +28,7 @@ const Tabs = () => {
         </ul>
     );
 
-}
+};
 
 Tabs.displayName = 'Tabs';
 

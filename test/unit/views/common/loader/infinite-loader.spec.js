@@ -4,17 +4,17 @@ import {shallow} from 'enzyme';
 import InfiniteLoader from '../../../../../src/views/common/loader/infinite-loader';
 
 describe('Infinite Loader', () => {
-	const render = () => {
-		return shallow(<InfiniteLoader/>);
-	};
-	const component = render();
+    const render = () => {
+        return shallow(<InfiniteLoader/>);
+    };
+    const component = render();
 
-	it('should have a overlay container div', () => {
-		expect(component.is('div')).toBe(true);
+    it('should have a overlay container div', () => {
+        expect(component.is('div')).toBe(true);
         expect(component.hasClass('spinner loader')).toBe(true);
-	});
+    });
 
-	it('should have a spinners div', () => {
+    it('should have a spinners div', () => {
         [
             'rect1',
             'rect2',

@@ -10,7 +10,7 @@ import {
     STORE_PIZZA_LIST,
     STORE_USER_LIST,
     RESET_STATE
-} from '../actions'
+} from '../actions';
 
 import {fetchData} from '../services/data-fetch';
 
@@ -121,17 +121,17 @@ export function loadUserList() {
 }
 
 export function setFilter(filter) {
-	return {
-		type: SET_FILTER,
-		value: filter
-	}
+    return {
+        type: SET_FILTER,
+        value: filter
+    };
 }
 
 export function setSortOrder(sortBy) {
     return {
         sortBy,
-		type: SET_SORT_ORDER
-	};
+        type: SET_SORT_ORDER
+    };
 }
 
 export function resetState() {

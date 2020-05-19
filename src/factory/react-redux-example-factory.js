@@ -1,4 +1,4 @@
-import {syncHistoryWithStore} from 'react-router-redux'
+import {syncHistoryWithStore} from 'react-router-redux';
 import {hashHistory} from 'react-router';
 
 import * as storeFactory from './store/store-factory';

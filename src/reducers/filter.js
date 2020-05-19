@@ -1,20 +1,20 @@
-import {SET_FILTER} from '../actions'
+import {SET_FILTER} from '../actions';
 
 function getDefaultState() {
-	return '';
+    return '';
 }
 
 function setFilter(state, action) {
-	return action.value;
+    return action.value;
 }
 
 export default function (state = getDefaultState(), action) {
-	const actions = {
-		[SET_FILTER] : setFilter
-	}
+    const actions = {
+        [SET_FILTER] : setFilter
+    };
 
 
-	const reducers = actions[action.type];
+    const reducers = actions[action.type];
 
-	return reducers ? reducers(state, action) : state;
+    return reducers ? reducers(state, action) : state;
 }

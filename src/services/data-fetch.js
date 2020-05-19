@@ -12,5 +12,5 @@ export const fetchData = (endpoint, queryObject = {}) => {
 
     return fetch(serviceEndpoint, getDefaultFetchOptions())
         .then((response) => response.json())
-        .catch(throwError)	
-}
+        .catch(throwError);	
+};

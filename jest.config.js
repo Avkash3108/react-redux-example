@@ -25,4 +25,4 @@ module.exports = {
     	 '\\.(css|scss)$': '<rootDir>/test/utils/style.js',
     	 '\\.(jpg|png|svg|jpeg)$': '<rootDir>/test/utils/style.js'
     }
-}
+};

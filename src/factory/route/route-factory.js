@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-	createRoutes,
-	Route
+    createRoutes,
+    Route
 } from 'react-router';
 
 import AppProvider from '../../views/app-provider';
@@ -9,7 +9,7 @@ import Pizzas from '../../views/pizzas/index';
 import Users from '../../views/users/index';
 
 export function getRoutes() {
-	return createRoutes(
+    return createRoutes(
         <Route
             component={AppProvider}
             path='/'
@@ -23,5 +23,5 @@ export function getRoutes() {
                 path='users'
             />
         </Route>
-	);
+    );
 }

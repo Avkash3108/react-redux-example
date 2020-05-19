@@ -1,21 +1,10 @@
-import * as reduxUtils from 'redux';
 import {makeServiceDataReducers} from '../../../../../src/reducers/fetch-status/service-data/service-data';
 
 describe('Service Data Reducers', () => {
-	let combineReducersStub;
-
-	beforeEach(() => {
-		combineReducersStub = jest.spyOn(reduxUtils, 'combineReducers');
-	});
-
-    afterEach(() => {
-
-    });
-
     describe('Required Redux behaviour', () => {
         it('should return NA if the provided state is undefined', () => {
-        	const fetchAction = 'TEST_FETCH_ACTION';
-        	const storeActions = ['TEST_STORE_ACTION'];
+            const fetchAction = 'TEST_FETCH_ACTION';
+            const storeActions = ['TEST_STORE_ACTION'];
             const reducer = makeServiceDataReducers(fetchAction, storeActions);
 
             const returnedState = reducer(undefined, {});
@@ -24,8 +13,8 @@ describe('Service Data Reducers', () => {
         });
 
         it('should return the provided state if action type is not handled', () => {
-        	const fetchAction = 'TEST_FETCH_ACTION';
-        	const storeActions = ['TEST_STORE_ACTION'];
+            const fetchAction = 'TEST_FETCH_ACTION';
+            const storeActions = ['TEST_STORE_ACTION'];
             const reducer = makeServiceDataReducers(fetchAction, storeActions);
 
             const initialState = 'TEST_STATUS';
@@ -42,45 +31,45 @@ describe('Service Data Reducers', () => {
     });
 
     describe('FETCH action is given', () => {
-    	it('should return FETCHING when serviece status is fetching', () => {
-    		const fetchAction = 'TEST_FETCH_ACTION';
+        it('should return FETCHING when serviece status is fetching', () => {
+            const fetchAction = 'TEST_FETCH_ACTION';
             const storeActions = ['TEST_STORE_ACTION'];
-    	    const reducer = makeServiceDataReducers(fetchAction, storeActions);
-    	    const initialState = 'TEST_STATUS';
-    	    const action = {
-    		    type: fetchAction
-    	    };
+            const reducer = makeServiceDataReducers(fetchAction, storeActions);
+            const initialState = 'TEST_STATUS';
+            const action = {
+                type: fetchAction
+            };
 
-    	    const resultedState = reducer(initialState, action);
-    	    expect(resultedState).toStrictEqual('FETCHING');
-    	});
+            const resultedState = reducer(initialState, action);
+            expect(resultedState).toStrictEqual('FETCHING');
+        });
     });
 
     describe('Given Stored Action', () => {
-    	const fetchAction ='ANY_FETCH_ACTION';
-    	const storeActions = ['STORE_ACTION_ONE', 'STORE_ACTION_TWO', 'STORE_ACTION_THREE'];
+        const fetchAction ='ANY_FETCH_ACTION';
+        const storeActions = ['STORE_ACTION_ONE', 'STORE_ACTION_TWO', 'STORE_ACTION_THREE'];
 
-    	function fetchedStatus(reducer, dataKey, action) {
-    		const initialState = 'TEST_STATUS';
-    		const finalAction = {
-    			[dataKey]: 'anyDataKey',
-    			type: action
-    		};
-    		const resultedState = reducer(initialState, finalAction);
+        function fetchedStatus(reducer, dataKey, action) {
+            const initialState = 'TEST_STATUS';
+            const finalAction = {
+                [dataKey]: 'anyDataKey',
+                type: action
+            };
+            const resultedState = reducer(initialState, finalAction);
 
-    		expect(resultedState).toStrictEqual('FETCHED');
-    	}
+            expect(resultedState).toStrictEqual('FETCHED');
+        }
 
-    	function unavailableStatus(reducer, dataKey, action) {
-    		const initialState = 'TEST_STATUS';
-    		const finalAction = {
-    			[dataKey]: null,
-    			type: action
-    		};
-    		const resultedState = reducer(initialState, finalAction);
+        function unavailableStatus(reducer, dataKey, action) {
+            const initialState = 'TEST_STATUS';
+            const finalAction = {
+                [dataKey]: null,
+                type: action
+            };
+            const resultedState = reducer(initialState, finalAction);
 
-    		expect(resultedState).toStrictEqual('UNAVAILABLE');
-    	}
+            expect(resultedState).toStrictEqual('UNAVAILABLE');
+        }
 
         it('should check for "data" and return state as FETCHED', () => {
             const reducer = makeServiceDataReducers(fetchAction, storeActions);
@@ -99,8 +88,8 @@ describe('Service Data Reducers', () => {
         });
 
         describe('Given dataKey attribute', () => {
-        	 const dataKey = 'anyDataKey';
-        	it('should check for dataKey and return state as FETCHED', () => {
+             const dataKey = 'anyDataKey';
+            it('should check for dataKey and return state as FETCHED', () => {
                 const reducer = makeServiceDataReducers(fetchAction, storeActions, dataKey);
 
                 storeActions.forEach((action) => {

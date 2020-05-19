@@ -6,7 +6,7 @@ import Tabs from './tabs/tabs';
 import DataTable from './data-table-connector';
 
 
-class Container extends React.Component { 
+class Container extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -18,7 +18,7 @@ class Container extends React.Component {
     componentWillUnmount() {
         this.props.resetState();
     }
-    
+
     render() {
         return (
             <div className={'table-container'}>
@@ -31,7 +31,7 @@ class Container extends React.Component {
                         servicesToCheck={['fetchPizzas', 'fetchUsers']}
                     />
             </div>
-        )
+        );
     }
 }
 

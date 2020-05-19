@@ -3,34 +3,34 @@ import {SET_FILTER} from '../../../src/actions';
 import reducer from '../../../src/reducers/filter';
 
 describe('Filter reducer', () => {
-	function anyInitialState() {
-		return '';
-	}
+    function anyInitialState() {
+        return '';
+    }
 
-	it('should return the default state if the provided state is undefined', () => {
-		const resultedState = reducer(undefined, {});
+    it('should return the default state if the provided state is undefined', () => {
+        const resultedState = reducer(undefined, {});
 
-		expect(resultedState).toBe('');
-	});
+        expect(resultedState).toBe('');
+    });
 
-	it('should return the provided state if action type is not handled', () => {
-		const initialState = anyInitialState();
-		const action = {
-			type: 'THIS_IS_AN_UNHANDLED_ACTION'
-		}
-		const resultedState = reducer(initialState, action);
+    it('should return the provided state if action type is not handled', () => {
+        const initialState = anyInitialState();
+        const action = {
+            type: 'THIS_IS_AN_UNHANDLED_ACTION'
+        };
+        const resultedState = reducer(initialState, action);
 
-		expect(resultedState).toBe(initialState);
-	});
+        expect(resultedState).toBe(initialState);
+    });
 
-	it('should set filter value on chaning filter component', () => {
-		const initialState = anyInitialState();
-		const action = {
-			type: SET_FILTER,
-			value: 'TEST'
-		}
-		const resultedState = reducer(initialState, action);
+    it('should set filter value on chaning filter component', () => {
+        const initialState = anyInitialState();
+        const action = {
+            type: SET_FILTER,
+            value: 'TEST'
+        };
+        const resultedState = reducer(initialState, action);
 
-		expect(resultedState).toBe(action.value);
-	});
+        expect(resultedState).toBe(action.value);
+    });
 });

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Sort from './sort'
+import Sort from './sort';
 
 import {FormattedMessage} from 'react-intl';
 
 const Header = (props) => {
-	return (
+    return (
         <div
             className={props.className}
         >
