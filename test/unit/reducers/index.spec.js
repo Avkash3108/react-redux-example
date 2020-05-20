@@ -5,10 +5,11 @@ import pizzas from '../../../src/reducers/pizzas';
 import filter from '../../../src/reducers/filter';
 import sort from '../../../src/reducers/sort-order';
 import routing from '../../../src/reducers/routing';
-import users from '.../../../src/reducers/users';
-import * as fetchStatusReducers from '../../../src/reducers/fetch-status';
 import allDataFetched from '../../../src/reducers/all-data-fetched';
 import lastFetchedPage from '../../../src/reducers/last-fetched-page';
+import * as fetchStatusReducers from '../../../src/reducers/fetch-status';
+
+import users from '.../../../src/reducers/users';
 
 describe('Application Reducers', () => {
     let combineReducersStub;

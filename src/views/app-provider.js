@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {IntlProvider} from "react-intl";
+
 import messages from '../i18n/en.json';
 
 function AppProvider(props) {

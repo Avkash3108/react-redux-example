@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {FormattedMessage} from 'react-intl';
 
 import Sort from './sort';
-
-import {FormattedMessage} from 'react-intl';
 
 const Header = (props) => {
     return (

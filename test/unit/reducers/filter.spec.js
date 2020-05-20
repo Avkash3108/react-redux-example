@@ -1,5 +1,4 @@
 import {SET_FILTER} from '../../../src/actions';
-
 import reducer from '../../../src/reducers/filter';
 
 describe('Filter reducer', () => {

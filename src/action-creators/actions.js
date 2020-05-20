@@ -11,7 +11,6 @@ import {
     STORE_USER_LIST,
     RESET_STATE
 } from '../actions';
-
 import {fetchData} from '../services/data-fetch';
 
 export function loadPizzaList() {

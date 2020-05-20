@@ -1,10 +1,10 @@
+import {hashHistory} from 'react-router';
+import * as reactRouterRedux from 'react-router-redux';
+import {when} from 'jest-when';
+
 import * as factory from '../../../src/factory/react-redux-example-factory';
 import * as routeFactory from '../../../src/factory/route/route-factory';
 import * as storeFactory from '../../../src/factory/store/store-factory';
-import {hashHistory} from 'react-router';
-
-import * as reactRouterRedux from 'react-router-redux';
-import {when} from 'jest-when';
 
 describe('React Eedux Example Factory', function() {
     let expectedObject;

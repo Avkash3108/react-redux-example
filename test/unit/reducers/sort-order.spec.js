@@ -2,7 +2,6 @@ import {
     SET_SORT_ORDER,
     RESET_STATE
 } from '../../../src/actions';
-
 import reducer from '../../../src/reducers/sort-order';
 
 describe('Sort Order Reducer', () => {

@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+
 import {combineServiceDataReducers} from './service-data';
 
 export function combineFetchStatusReducers() {

@@ -7,7 +7,6 @@ import {
     setSortOrder,
     resetState
 } from '../../../src/action-creators/actions';
-
 import * as actions from '../../../src/actions';
 import * as fetchServices from '../../../src/services/data-fetch';
 

@@ -49,13 +49,13 @@ describe('Application Store Factory', () => {
     afterEach(() => {});
 
     describe('Create Store', () => {
-        it('Should Create Store using reducers with composing thunk middleware, router middleware', () => {
+        it('should Create Store using reducers with composing thunk middleware, router middleware', () => {
             storeFactory.getStore();
 
             expect(createStoreStub).toHaveBeenCalledWith(reducer, composedMiddlewares);
         });
 
-        it('Should get all reducers from reducer factory when creating store', () => {
+        it('should get all reducers from reducer factory when creating store', () => {
             storeFactory.getStore();
 
             expect(reducerFactoryStub).toHaveBeenCalledTimes(1);

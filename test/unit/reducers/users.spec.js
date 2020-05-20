@@ -3,7 +3,6 @@ import {
     STORE_USER_LIST,
     STORE_MORE_USERS
 } from '../../../src/actions';
-
 import reducer from '../../../src/reducers/users';
 
 describe('User List Reducer', () => {

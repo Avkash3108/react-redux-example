@@ -2,7 +2,7 @@
 
 .react-redux-example {
     div {
-      box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     .sortable-icons {
@@ -20,76 +20,77 @@
     }
 
     .flex-table {
-         display: flex;
-         flex-flow: column wrap;
-         border-left: solid 1px $table-border;
-         transition: 0.5s;
+        border-left: solid 1px $table-border;
+        display: flex;
+        flex-flow: column wrap;
+        transition: 0.5s;
 
-         &.pizzas {
-             max-width: 388px;
+        &.pizzas {
+            max-width: 388px;
 
-             .pizza-name {
-                 width: 328px
-             }
-             .category,
-             .price {
-                 width: 100px
-             }
-             .available-sizes {
-                 width: 140px
-             }
+            .pizza-name {
+                width: 328px;
+            }
 
-         }
+            .category,
+            .price {
+                width: 100px;
+            }
 
-         &.users {
-             .last-name,
-             .first-name {
-                  width: 220px
-             }
+            .available-sizes {
+                width: 140px;
+            }
+        }
 
-             .e-mail {
-                 width: 250px
-             }
+        &.users {
+            .last-name,
+            .first-name {
+                width: 220px;
+            }
 
-             .address {
-                 width: 250px
-             }
+            .e-mail {
+                width: 250px;
+            }
 
-              .contact {
-                 width: 250px
-             }
-         }
-    }
+            .address {
+                width: 250px;
+            }
 
-   .flex-row {
-      display: flex;
-      flex-flow: row nowrap;
+            .contact {
+                width: 250px;
+            }
+        }
 
-      &.header {
-          .flex-cell {
-              border-top: solid 1px $table-border;
-              background: $table-header;
-              color: $white
-          }   
-      }
-    }
+        .flex-cell {
+            border-bottom: solid 1px $table-border;
+            border-right: solid 1px $table-border;
+            display: flex;
+            flex-flow: row nowrap;
+            padding: 0.5em 0.5em;
+            width: calc(100% / 4);
 
-    .flex-cell {
-      display: flex;
-      flex-flow: row nowrap;
-      padding: 0.5em 0.5em;
-      border-right: solid 1px $table-border;
-      border-bottom: solid 1px $table-border;
-      width: calc(100% / 4);
+            &:hover {
+                background: #f5f5f5;
+                transition: 500ms;
+            }
 
-      &:hover {
-         background: #F5F5F5;
-         transition: 500ms;
-      }
+            &.sno {
+                width: 60px;
+            }
+        }
 
-      &.sno {
-          width: 60px;
-      }
+        .flex-row {
+            display: flex;
+            flex-flow: row nowrap;
+
+            &.header {
+                .flex-cell {
+                    background: $table-header;
+                    border-top: solid 1px $table-border;
+                    color: $white;
+                }
+            }
+        }
     }
 
     input {

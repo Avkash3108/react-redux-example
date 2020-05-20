@@ -3,7 +3,6 @@ import {
     STORE_PIZZA_LIST,
     STORE_MORE_PIZZAS
 } from '../../../src/actions';
-
 import reducer from '../../../src/reducers/pizzas';
 
 describe('Pizza List Reducer', () => {

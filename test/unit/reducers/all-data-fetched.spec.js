@@ -7,7 +7,6 @@ import {
     STORE_MORE_USERS
 
 } from '../../../src/actions';
-
 import reducer from '../../../src/reducers/all-data-fetched';
 
 describe('All data fetched reducer', () => {

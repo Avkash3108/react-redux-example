@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Headers from './headers';
-import Row from './Row';
 import Sticky from 'react-stickynode';
 import InfiniteScroll from 'react-infinite-scroller';
+
 import InfiniteLoader from './loader/infinite-loader';
+import Headers from './headers';
+import Row from './row';
 
 function renderTable(props) {
     let table;

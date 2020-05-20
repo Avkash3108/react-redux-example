@@ -1,4 +1,3 @@
-import React from 'react';
 import {match} from 'react-router';
 
 import AppProvider from '../../../../src/views/app-provider';

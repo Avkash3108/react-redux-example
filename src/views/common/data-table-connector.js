@@ -1,4 +1,5 @@
 import {connect} from 'react-redux';
+
 import DataTable from './data-table';
 import {
     getServiceReducerKey,

@@ -4,7 +4,6 @@ import {
     STORE_MORE_PIZZAS,
     STORE_MORE_USERS
 } from '../../../src/actions';
-
 import reducer from '../../../src/reducers/last-fetched-page';
 
 describe('Last fetched page reducer', () => {

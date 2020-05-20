@@ -1,6 +1,7 @@
 import {routerReducer} from 'react-router-redux';
 
 import reducer from '../../../src/reducers/routing';
+
 jest.mock('react-router-redux');
 
 describe('Routing Reducer', () => {

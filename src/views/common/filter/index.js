@@ -1,5 +1,6 @@
-import { connect } from 'react-redux';
-import * as actions from '../../action-creators/actions';
+import {connect} from 'react-redux';
+
+import * as actions from '../../../action-creators/actions';
 import Filter from './filter';
 
 function mapDispatchToProps(dispatch, ownProps) {
