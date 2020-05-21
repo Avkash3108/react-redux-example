@@ -43,7 +43,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.resolve(mockedData));
 
-            return loadUserList()(dispatch, () => state).then(() =>{
+            return loadUserList()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[0][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -62,7 +62,7 @@ describe('React Redux Example Action Creators', () => {
                     'q': state.filter
                 };
 
-                return loadUserList()(dispatch, () => state).then(() =>{
+                return loadUserList()(dispatch, () => state).then(() => {
                     expect(repositoryStub).toHaveBeenCalledTimes(1);
                     expect(repositoryStub).toHaveBeenCalledWith('/users', queryObject);
                 });
@@ -78,7 +78,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.resolve(mockedData));
 
-            return loadUserList()(dispatch, () => state).then(() =>{
+            return loadUserList()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[1][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -94,7 +94,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.reject(mockedData));
 
-            return loadUserList()(dispatch, () => state).then(() =>{
+            return loadUserList()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[1][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -118,7 +118,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.resolve(mockedData));
 
-            return loadMoreUsers()(dispatch, () => state).then(() =>{
+            return loadMoreUsers()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[0][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -138,7 +138,7 @@ describe('React Redux Example Action Creators', () => {
                     'q': state.filter
                 };
 
-                return loadMoreUsers()(dispatch, () => state).then(() =>{
+                return loadMoreUsers()(dispatch, () => state).then(() => {
                     expect(repositoryStub).toHaveBeenCalledTimes(1);
                     expect(repositoryStub).toHaveBeenCalledWith('/users', queryObject);
                 });
@@ -155,7 +155,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.resolve(mockedData));
 
-            return loadMoreUsers()(dispatch, () => state).then(() =>{
+            return loadMoreUsers()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[1][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -172,7 +172,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.reject(mockedData));
 
-            return loadMoreUsers()(dispatch, () => state).then(() =>{
+            return loadMoreUsers()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[1][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -196,7 +196,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.resolve(mockedData));
 
-            return loadPizzaList()(dispatch, () => state).then(() =>{
+            return loadPizzaList()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[0][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -215,7 +215,7 @@ describe('React Redux Example Action Creators', () => {
                     'q': state.filter
                 };
 
-                return loadPizzaList()(dispatch, () => state).then(() =>{
+                return loadPizzaList()(dispatch, () => state).then(() => {
                     expect(repositoryStub).toHaveBeenCalledTimes(1);
                     expect(repositoryStub).toHaveBeenCalledWith('/pizzas', queryObject);
                 });
@@ -231,7 +231,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.resolve(mockedData));
 
-            return loadPizzaList()(dispatch, () => state).then(() =>{
+            return loadPizzaList()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[1][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -247,7 +247,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.reject(mockedData));
 
-            return loadPizzaList()(dispatch, () => state).then(() =>{
+            return loadPizzaList()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[1][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -271,7 +271,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.resolve(mockedData));
 
-            return loadMorePizzas()(dispatch, () => state).then(() =>{
+            return loadMorePizzas()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[0][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -290,7 +290,7 @@ describe('React Redux Example Action Creators', () => {
                     'q': state.filter
                 };
 
-                return loadMorePizzas()(dispatch, () => state).then(() =>{
+                return loadMorePizzas()(dispatch, () => state).then(() => {
                     expect(repositoryStub).toHaveBeenCalledTimes(1);
                     expect(repositoryStub).toHaveBeenCalledWith('/pizzas', queryObject);
                 });
@@ -307,7 +307,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.resolve(mockedData));
 
-            return loadMorePizzas()(dispatch, () => state).then(() =>{
+            return loadMorePizzas()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[1][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
@@ -324,7 +324,7 @@ describe('React Redux Example Action Creators', () => {
 
             stubRepository().mockReturnValue(Promise.reject(mockedData));
 
-            return loadMorePizzas()(dispatch, () => state).then(() =>{
+            return loadMorePizzas()(dispatch, () => state).then(() => {
                 const dispatchedAction = dispatch.mock.calls[1][0];
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
