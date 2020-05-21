@@ -6,26 +6,26 @@ import {FormattedMessage} from 'react-intl';
 import Tabs from '../../../../../src/views/common/tabs/tabs';
 
 describe('Tabs Component', () => {
-	const render = () => {
-		return shallow(<Tabs/>);
-	};
-	const component = render();
+    const render = () => {
+        return shallow(<Tabs/>);
+    };
+    const component = render();
 
-	it('should have a tab container ul', () => {
-		expect(component.is('ul')).toBe(true);
+    it('should have a tab container ul', () => {
+        expect(component.is('ul')).toBe(true);
         expect(component.hasClass('tabs')).toBe(true);
-	});
+    });
 
-	it('should render tabs', () => {
+    it('should render tabs', () => {
         [
             {
-                title: 'PIZZA',
-                link: '/pizzas'
+                link: '/pizzas',
+                title: 'PIZZA'
             },
             {
-                title: 'USER',
-                link: '/users'
-            },
+                link: '/users',
+                title: 'USER'
+            }
         ].forEach((tab, index) => {
             const tabLinkContainer = component.childAt(index);
             const tabLink = tabLinkContainer.childAt(0);

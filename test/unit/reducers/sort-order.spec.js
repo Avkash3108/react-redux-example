@@ -7,8 +7,8 @@ import reducer from '../../../src/reducers/sort-order';
 describe('Sort Order Reducer', () => {
     function anyInitialState() {
         return {
-            sortOrder: null,
-            sortBy: null
+            sortBy: null,
+            sortOrder: null
         };
     }
 
@@ -17,7 +17,6 @@ describe('Sort Order Reducer', () => {
 
         expect(resultedState).toStrictEqual(anyInitialState());
     });
-
 
     it('should return the provided state if action type is not handled', () => {
         const initialState = anyInitialState();

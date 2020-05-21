@@ -16,7 +16,6 @@ describe('User List Reducer', () => {
         expect(resultedState).toStrictEqual(anyInitialState());
     });
 
-
     it('should return the provided state if action type is not handled', () => {
         const initialState = anyInitialState();
         const action = {

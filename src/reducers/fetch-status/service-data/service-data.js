@@ -10,7 +10,6 @@ export function makeServiceDataReducers(fetchActions, storeActions, payload = 'd
             ...acc,
             [action]: getStoreAction(payload)
         };
-
     }, {});
 
     return (state = 'NA', action) => {
@@ -22,6 +21,6 @@ export function makeServiceDataReducers(fetchActions, storeActions, payload = 'd
         };
         const reducer = actions[action.type];
 
-         return reducer ? reducer(state, action) : state;
+        return reducer ? reducer(state, action) : state;
     };
 }

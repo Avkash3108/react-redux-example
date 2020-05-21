@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import {FormattedMessage} from 'react-intl';
 
 const Tabs = () => {
-	return (
+    return (
         <ul
             className={'tabs'}
         >
@@ -26,7 +26,6 @@ const Tabs = () => {
             </li>
         </ul>
     );
-
 };
 
 Tabs.displayName = 'Tabs';

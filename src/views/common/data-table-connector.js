@@ -13,8 +13,8 @@ function mapStateToProps(state, ownProps) {
 
     return {
         allDataFetched: state.allDataFetched,
-        dataLoading,
         data: state[ownProps.searchId],
+        dataLoading,
         moreDataLoading: state.fetchStatus.serviceData[getLoadMoreDataReducerKey(ownProps.searchId)] === 'FETCHING'
     };
 }

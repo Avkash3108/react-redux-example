@@ -5,8 +5,8 @@ import {
 
 function getDefaultState() {
     return {
-        sortOrder: null,
-        sortBy: null
+        sortBy: null,
+        sortOrder: null
     };
 }
 
@@ -25,8 +25,8 @@ function setSortOrder(state, action) {
 
 export default function (state = getDefaultState(), action) {
     const actions = {
-        [SET_SORT_ORDER] : setSortOrder,
-        [RESET_STATE]: getDefaultState
+        [RESET_STATE]: getDefaultState,
+        [SET_SORT_ORDER]: setSortOrder
     };
 
     const reducers = actions[action.type];

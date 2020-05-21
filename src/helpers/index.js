@@ -1,22 +1,21 @@
 const headerKeys = {
-    users: ['FIRST_NAME', 'LAST_NAME', 'E_MAIL', 'ADDRESS', 'CONTACT'],
-    pizzas: ['PIZZA_NAME', 'PRICE', 'AVAILABLE_SIZES', 'CATEGORY']
+    pizzas: ['PIZZA_NAME', 'PRICE', 'AVAILABLE_SIZES', 'CATEGORY'],
+    users: ['FIRST_NAME', 'LAST_NAME', 'E_MAIL', 'ADDRESS', 'CONTACT']
 };
 
 const dataKeys = {
-    users: ['firstName', 'lastName', 'email', 'address', 'contact'],
-    pizzas: ['name', 'price', 'availableSizes', 'category']
+    pizzas: ['name', 'price', 'availableSizes', 'category'],
+    users: ['firstName', 'lastName', 'email', 'address', 'contact']
 };
 
 const serviceReducerKeys = {
-        users: 'fetchUsers',
-        pizzas: 'fetchPizzas'
-
+    pizzas: 'fetchPizzas',
+    users: 'fetchUsers'
 };
 
 const loadMoreDataReducerKeys = {
-        users: 'fetchMoreUsers',
-        pizzas: 'fetchMorePizzas'
+    pizzas: 'fetchMorePizzas',
+    users: 'fetchMoreUsers'
 };
 
 export function getServiceReducerKey(searchId) {
@@ -41,14 +40,14 @@ export function cleanHeaderClass(name) {
 
 export function cleanDataClass(name) {
     return {
+        address: 'address',
+        availableSizes: 'available-sizes',
+        category: 'category',
+        contact: 'contact',
+        email: 'e-mail',
         firstName: 'first-name',
         lastName: 'last-name',
-        email: 'e-mail',
-        address: 'address',
-        contact: 'contact',
         name: 'pizza-name',
-        price: 'price',
-        availableSizes: 'available-sizes',
-        category: 'category'
+        price: 'price'
     }[name];
 }

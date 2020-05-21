@@ -10,9 +10,8 @@ function setFilter(state, action) {
 
 export default function (state = getDefaultState(), action) {
     const actions = {
-        [SET_FILTER] : setFilter
+        [SET_FILTER]: setFilter
     };
-
 
     const reducers = actions[action.type];
 

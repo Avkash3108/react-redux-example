@@ -20,13 +20,13 @@ export function loadPizzaList() {
         });
         const state = getState();
         const queryObject = {
-            '_page': 1,
             '_limit': 100,
-            '_sort': state.sort.sortBy,
             '_order': state.sort.sortOrder,
+            '_page': 1,
+            '_sort': state.sort.sortBy,
             'q': state.filter
-
         };
+
         return fetchData('/pizzas', queryObject)
             .catch(() => null)
             .then((data) => {
@@ -39,17 +39,17 @@ export function loadPizzaList() {
 }
 
 export function loadMorePizzas() {
-    return(dispatch, getState) => {
+    return (dispatch, getState) => {
         dispatch({
             type: FETCH_MORE_PIZZAS
         });
         const state = getState();
         const lastPage = state.lastFetchedPage + 1;
         const queryObject = {
-            '_page': lastPage,
             '_limit': 100,
-            '_sort': state.sort.sortBy,
             '_order': state.sort.sortOrder,
+            '_page': lastPage,
+            '_sort': state.sort.sortBy,
             'q': state.filter
 
         };
@@ -67,20 +67,21 @@ export function loadMorePizzas() {
 }
 
 export function loadMoreUsers() {
-    return(dispatch, getState) => {
+    return (dispatch, getState) => {
         dispatch({
             type: FETCH_MORE_USERS
         });
         const state = getState();
         const lastPage = state.lastFetchedPage + 1;
         const queryObject = {
-            '_page': lastPage,
             '_limit': 100,
-            '_sort': state.sort.sortBy,
             '_order': state.sort.sortOrder,
+            '_page': lastPage,
+            '_sort': state.sort.sortBy,
             'q': state.filter
 
         };
+
         return fetchData('/users', queryObject)
             .catch(() => null)
             .then((data) => {
@@ -94,19 +95,20 @@ export function loadMoreUsers() {
 }
 
 export function loadUserList() {
-    return(dispatch, getState) => {
+    return (dispatch, getState) => {
         dispatch({
             type: FETCH_USER_LIST
         });
         const state = getState();
         const queryObject = {
-            '_page': 1,
             '_limit': 100,
-            '_sort': state.sort.sortBy,
             '_order': state.sort.sortOrder,
+            '_page': 1,
+            '_sort': state.sort.sortBy,
             'q': state.filter
 
         };
+
         return fetchData('/users', queryObject)
             .catch(() => null)
             .then((data) => {
@@ -116,7 +118,6 @@ export function loadUserList() {
                 });
             });
     };
-
 }
 
 export function setFilter(filter) {

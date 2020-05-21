@@ -7,6 +7,10 @@ import InfiniteLoader from './loader/infinite-loader';
 import Headers from './headers';
 import Row from './row';
 
+const getHasMoreProp = (props) => {
+    return props.moreDataLoading ? false : !props.allDataFetched;
+};
+
 function renderTable(props) {
     let table;
 
@@ -17,7 +21,7 @@ function renderTable(props) {
             <InfiniteScroll
                 pageStart={0}
                 loader={<InfiniteLoader key={'infinite-loader'}/>}
-                hasMore={props.moreDataLoading ? false : !props.allDataFetched}
+                hasMore={getHasMoreProp(props)}
                 loadMore={props.loadMoreData}
                 threshold={500}
                 initialLoad={true}
@@ -49,7 +53,6 @@ const DataTable = (props) => {
             {renderTable(props)}
         </div>
     );
-
 };
 
 DataTable.displayName = 'DataTable';

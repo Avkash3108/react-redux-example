@@ -9,7 +9,6 @@ import {combineFetchStatusReducers} from './fetch-status';
 import allDataFetched from './all-data-fetched';
 import lastFetchedPage from './last-fetched-page';
 
-
 export function getReducers() {
     const reducers = {
         allDataFetched,

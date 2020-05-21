@@ -25,12 +25,12 @@ describe('Sort Header Connector', () => {
         }
     };
     const render = (state = any.state(), dispatch = any.dispatch(), props = any.props()) => {
-
         const store = {
             dispatch,
             getState: () => state,
             subscribe: () => {}
         };
+
         return shallow(
             <SortConnector
                 store={store}
@@ -85,6 +85,7 @@ describe('Sort Header Connector', () => {
             const dispatch = any.dispatch();
 
             const propStub = jest.spyOn(props, 'onSort');
+
             render(any.state(), dispatch, props).props().onSorting();
 
             expect(propStub).toHaveBeenCalledTimes(1);

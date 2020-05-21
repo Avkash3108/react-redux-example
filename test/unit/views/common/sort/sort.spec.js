@@ -11,11 +11,11 @@ describe('Sort Component', () => {
             onSorting: jest.fn(),
             sortOrder: ''
         };
-
     };
     const render = (props = anyProps()) => {
         return shallow(<Sort {...props}/>);
     };
+
     it('should be a div', () => {
         const component = render();
 
@@ -36,7 +36,6 @@ describe('Sort Component', () => {
 
         expect(component.hasClass('asc')).toStrictEqual(true);
     });
-
 
     it('should not have an Ascending Order ClassName when sort order is not ASC', () => {
         const component = render();

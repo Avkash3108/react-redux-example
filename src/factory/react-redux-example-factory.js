@@ -10,8 +10,8 @@ export function getFactories() {
     const history = syncHistoryWithStore(hashHistory, store);
 
     return {
-      history,
-      routes,
-      store
+        history,
+        routes,
+        store
     };
 }

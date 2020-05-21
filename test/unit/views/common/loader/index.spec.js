@@ -25,12 +25,12 @@ describe('Full Page Loader Connector', () => {
         }
     };
     const render = (state = any.state(), dispatch = any.dispatch(), props = any.props()) => {
-
         const store = {
             dispatch,
             getState: () => state,
             subscribe: () => {}
         };
+
         return shallow(
             <FullPageLoaderConnector
                 store={store}
@@ -38,6 +38,7 @@ describe('Full Page Loader Connector', () => {
             />
         );
     };
+
     it('should render <FullPageLoader/> component', () => {
         const component = render();
 
@@ -63,5 +64,4 @@ describe('Full Page Loader Connector', () => {
             expect(component.props().isLoading).toStrictEqual(false);
         });
     });
-
 });

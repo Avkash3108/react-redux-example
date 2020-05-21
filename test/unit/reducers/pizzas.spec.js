@@ -16,7 +16,6 @@ describe('Pizza List Reducer', () => {
         expect(resultedState).toStrictEqual(anyInitialState());
     });
 
-
     it('should return the provided state if action type is not handled', () => {
         const initialState = anyInitialState();
         const action = {
@@ -93,7 +92,6 @@ describe('Pizza List Reducer', () => {
 
         expect(resultedState).toStrictEqual(initialState);
     });
-
 
     it('should return blank pizza list on dispatching FETCH_USER_LIST action', () => {
         const initialState = anyInitialState();

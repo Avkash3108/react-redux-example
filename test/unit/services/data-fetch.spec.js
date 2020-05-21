@@ -18,7 +18,8 @@ describe('Data Fetch Services', () => {
 
     afterEach(() => {});
 
-    const getFetchStub = (response = anyResponse(), success = true, status = 200) => {
+    const okStatus = 200;
+    const getFetchStub = (response = anyResponse(), success = true, status = okStatus) => {
         const fetchStub = jest.spyOn(global, 'fetch');
         const promiseStatus = success ? 'resolve' : 'reject';
 
@@ -75,6 +76,7 @@ describe('Data Fetch Services', () => {
                 any: 'query'
             };
             const endpoint = '/test';
+
             getFetchStub(response);
 
             return dataFetchServices.fetchData(endpoint, queryObject).then((actualResponse) => {
@@ -88,11 +90,12 @@ describe('Data Fetch Services', () => {
                 any: 'query'
             };
             const endpoint = '/test';
+
             getFetchStub(expectedResponse, false);
 
             return dataFetchServices.fetchData(endpoint, queryObject)
                 .then(() => {
-                     throw new Error('Unexpected resolution');
+                    throw new Error('Unexpected resolution');
                 })
                 .catch((error) => {
                     expect(error).toStrictEqual(expectedResponse);
@@ -105,11 +108,12 @@ describe('Data Fetch Services', () => {
                 any: 'query'
             };
             const endpoint = '/test';
+
             getFetchStub(anyUnknownError, false);
 
             return dataFetchServices.fetchData(endpoint, queryObject)
                 .then(() => {
-                     throw new Error('Unexpected resolution');
+                    throw new Error('Unexpected resolution');
                 })
                 .catch((error) => {
                     expect(error).toStrictEqual(anyUnknownError);

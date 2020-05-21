@@ -15,7 +15,7 @@ const Headers = (props) => {
         <div
             className={'flex-row header'}
         >
-             {getHeaderKeys(props.searchId).map((label, index) =>
+            {getHeaderKeys(props.searchId).map((label, index) =>
                 <Header
                     className={`flex-cell ${cleanHeaderClass(label)}`}
                     label={label}
@@ -23,7 +23,7 @@ const Headers = (props) => {
                     key={`${label}${index}`}
                     sortBy={dataKeys[index]}
                 />
-             )}
+            )}
         </div>
     );
 };

@@ -14,10 +14,10 @@ const {
 function ReactReduxExampleProvider() {
     return (
         <Provider store={store}>
-             <Router
-                 history={history}
-                 routes={routes}
-             />
+            <Router
+                history={history}
+                routes={routes}
+            />
         </Provider>
     );
 }

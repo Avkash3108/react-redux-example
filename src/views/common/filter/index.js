@@ -12,4 +12,4 @@ function mapDispatchToProps(dispatch, ownProps) {
     };
 }
 
-export default connect(undefined ,mapDispatchToProps)(Filter);
+export default connect(undefined, mapDispatchToProps)(Filter);

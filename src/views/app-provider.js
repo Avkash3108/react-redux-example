@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {IntlProvider} from "react-intl";
+import {IntlProvider} from 'react-intl';
 
 import messages from '../i18n/en.json';
 
 function AppProvider(props) {
-    return(
+    return (
         <IntlProvider
             locale='en'
             messages={messages}

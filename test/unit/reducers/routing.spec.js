@@ -21,6 +21,7 @@ describe('Routing Reducer', () => {
     it('should call routerReducer with given state and action', () => {
         const state = any.state();
         const action = any.action();
+
         routerReducer.mockReturnValue({});
 
         reducer(state, action);

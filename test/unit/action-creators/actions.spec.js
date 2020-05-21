@@ -35,7 +35,7 @@ describe('React Redux Example Action Creators', () => {
             dispatch = any.dispatch();
         });
 
-         it('should let the system know that the data is being fetched', () => {
+        it('should let the system know that the data is being fetched', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
                 type: actions.FETCH_USER_LIST
@@ -48,17 +48,17 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
 
-         describe('Query String', () => {
+        describe('Query String', () => {
             it('should call service with provided query informations', () => {
                 const mockedData = ['anyData'];
                 const repositoryStub = stubRepository().mockReturnValue(Promise.resolve(mockedData));
                 const queryObject = {
-                    '_page': 1,
                     '_limit': 100,
-                    '_sort': state.sort.sortBy,
                     '_order': state.sort.sortOrder,
+                    '_page': 1,
+                    '_sort': state.sort.sortBy,
                     'q': state.filter
                 };
 
@@ -66,10 +66,10 @@ describe('React Redux Example Action Creators', () => {
                     expect(repositoryStub).toHaveBeenCalledTimes(1);
                     expect(repositoryStub).toHaveBeenCalledWith('/users', queryObject);
                 });
-             });
-         });
+            });
+        });
 
-         it('should laod user list and store it', () => {
+        it('should laod user list and store it', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
                 data: mockedData,
@@ -83,7 +83,7 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
 
         it('should dispatch null on service error', () => {
             const mockedData = ['anyData'];
@@ -99,7 +99,7 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
     });
 
     describe('Loading more users using infinite scroll', () => {
@@ -110,7 +110,7 @@ describe('React Redux Example Action Creators', () => {
             dispatch = any.dispatch();
         });
 
-         it('should let the system know that the data is being fetched', () => {
+        it('should let the system know that the data is being fetched', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
                 type: actions.FETCH_MORE_USERS
@@ -123,17 +123,18 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
 
-         describe('Query String', () => {
+        describe('Query String', () => {
             it('should call service with provided query informations', () => {
                 const mockedData = ['anyData'];
                 const repositoryStub = stubRepository().mockReturnValue(Promise.resolve(mockedData));
                 const queryObject = {
-                    '_page': state.lastFetchedPage + 1,
                     '_limit': 100,
-                    '_sort': state.sort.sortBy,
                     '_order': state.sort.sortOrder,
+                    '_page': state.lastFetchedPage + 1,
+                    '_sort': state.sort.sortBy,
+
                     'q': state.filter
                 };
 
@@ -141,14 +142,14 @@ describe('React Redux Example Action Creators', () => {
                     expect(repositoryStub).toHaveBeenCalledTimes(1);
                     expect(repositoryStub).toHaveBeenCalledWith('/users', queryObject);
                 });
-             });
-         });
+            });
+        });
 
-         it('should laod and store next list of users', () => {
+        it('should laod and store next list of users', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
-                page: state.lastFetchedPage + 1,
                 data: mockedData,
+                page: state.lastFetchedPage + 1,
                 type: actions.STORE_MORE_USERS
             };
 
@@ -159,13 +160,13 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
 
         it('should dispatch null on service error', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
-                page: state.lastFetchedPage + 1,
                 data: null,
+                page: state.lastFetchedPage + 1,
                 type: actions.STORE_MORE_USERS
             };
 
@@ -176,9 +177,8 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
     });
-
 
     describe('Loading pizza list', () => {
         let state, dispatch;
@@ -188,7 +188,7 @@ describe('React Redux Example Action Creators', () => {
             dispatch = any.dispatch();
         });
 
-         it('should let the system know that the data is being fetched', () => {
+        it('should let the system know that the data is being fetched', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
                 type: actions.FETCH_PIZZA_LIST
@@ -201,17 +201,17 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
 
-         describe('Query String', () => {
+        describe('Query String', () => {
             it('should call service with provided query informations', () => {
                 const mockedData = ['anyData'];
                 const repositoryStub = stubRepository().mockReturnValue(Promise.resolve(mockedData));
                 const queryObject = {
-                    '_page': 1,
                     '_limit': 100,
-                    '_sort': state.sort.sortBy,
                     '_order': state.sort.sortOrder,
+                    '_page': 1,
+                    '_sort': state.sort.sortBy,
                     'q': state.filter
                 };
 
@@ -219,10 +219,10 @@ describe('React Redux Example Action Creators', () => {
                     expect(repositoryStub).toHaveBeenCalledTimes(1);
                     expect(repositoryStub).toHaveBeenCalledWith('/pizzas', queryObject);
                 });
-             });
-         });
+            });
+        });
 
-         it('should laod pizzas list and store it', () => {
+        it('should laod pizzas list and store it', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
                 data: mockedData,
@@ -236,7 +236,7 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
 
         it('should dispatch null on service error', () => {
             const mockedData = ['anyData'];
@@ -252,7 +252,7 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
     });
 
     describe('Loading more pizaas using infinite scroll', () => {
@@ -263,7 +263,7 @@ describe('React Redux Example Action Creators', () => {
             dispatch = any.dispatch();
         });
 
-         it('should let the system know that the data is being fetched', () => {
+        it('should let the system know that the data is being fetched', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
                 type: actions.FETCH_MORE_PIZZAS
@@ -276,17 +276,17 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
 
-         describe('Query String', () => {
+        describe('Query String', () => {
             it('should call service with provided query informations', () => {
                 const mockedData = ['anyData'];
                 const repositoryStub = stubRepository().mockReturnValue(Promise.resolve(mockedData));
                 const queryObject = {
-                    '_page': state.lastFetchedPage + 1,
                     '_limit': 100,
-                    '_sort': state.sort.sortBy,
                     '_order': state.sort.sortOrder,
+                    '_page': state.lastFetchedPage + 1,
+                    '_sort': state.sort.sortBy,
                     'q': state.filter
                 };
 
@@ -294,14 +294,14 @@ describe('React Redux Example Action Creators', () => {
                     expect(repositoryStub).toHaveBeenCalledTimes(1);
                     expect(repositoryStub).toHaveBeenCalledWith('/pizzas', queryObject);
                 });
-             });
-         });
+            });
+        });
 
-         it('should laod and store next list of users', () => {
+        it('should laod and store next list of users', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
-                page: state.lastFetchedPage + 1,
                 data: mockedData,
+                page: state.lastFetchedPage + 1,
                 type: actions.STORE_MORE_PIZZAS
             };
 
@@ -312,13 +312,13 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
 
         it('should dispatch null on service error', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
-                page: state.lastFetchedPage + 1,
                 data: null,
+                page: state.lastFetchedPage + 1,
                 type: actions.STORE_MORE_PIZZAS
             };
 
@@ -329,7 +329,7 @@ describe('React Redux Example Action Creators', () => {
 
                 expect(dispatchedAction).toStrictEqual(expectedAction);
             });
-         });
+        });
     });
 
     it('should dispatch an action to reset Lcm', () => {

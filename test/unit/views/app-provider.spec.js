@@ -1,5 +1,5 @@
 import React from 'react';
-import {IntlProvider} from "react-intl";
+import {IntlProvider} from 'react-intl';
 import {shallow} from 'enzyme';
 
 import messages from '../../../src/i18n/en.json';
@@ -14,7 +14,6 @@ describe('App Provide', () => {
                 <MockChildComponent/>
             )
         };
-
     };
     const render = (props = anyProps()) => {
         return shallow(<AppProvider {...props}/>);

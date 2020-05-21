@@ -18,12 +18,12 @@ describe('PIzza Table Connector', () => {
         }
     };
     const render = (state = any.state(), dispatch = any.dispatch(), props = any.props()) => {
-
         const store = {
             dispatch,
             getState: () => state,
             subscribe: () => {}
         };
+
         return shallow(
             <PizzaTableConnector
                 store={store}

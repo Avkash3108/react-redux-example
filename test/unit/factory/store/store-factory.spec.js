@@ -4,11 +4,11 @@ import * as reactRouterRedux from 'react-router-redux';
 import thunk from 'redux-thunk';
 import * as reduxUtils from 'redux';
 
-import * as reducerFactory  from '../../../../src/reducers';
+import * as reducerFactory from '../../../../src/reducers';
 import * as storeFactory from '../../../../src/factory/store/store-factory';
 
 describe('Application Store Factory', () => {
-     let createStoreStub, reducerFactoryStub, expectedStore, reducer, routerMiddleware, thunkMiddleware, unAppliedRouterMiddleware, composedMiddlewares;
+    let createStoreStub, reducerFactoryStub, expectedStore, reducer, routerMiddleware, thunkMiddleware, unAppliedRouterMiddleware, composedMiddlewares;
 
     function makeFakeObjects() {
         composedMiddlewares = 'composedMiddlewares';
@@ -20,25 +20,25 @@ describe('Application Store Factory', () => {
     }
 
     function stubObjects() {
-    when(jest.spyOn(reactRouterRedux, 'routerMiddleware'))
-        .calledWith(hashHistory)
-        .mockReturnValue(unAppliedRouterMiddleware);
+        when(jest.spyOn(reactRouterRedux, 'routerMiddleware'))
+            .calledWith(hashHistory)
+            .mockReturnValue(unAppliedRouterMiddleware);
 
-    when(jest.spyOn(reduxUtils, 'applyMiddleware'))
-        .calledWith(unAppliedRouterMiddleware)
-        .mockReturnValue(routerMiddleware)
-        .calledWith(thunk)
-        .mockReturnValue(thunkMiddleware);
+        when(jest.spyOn(reduxUtils, 'applyMiddleware'))
+            .calledWith(unAppliedRouterMiddleware)
+            .mockReturnValue(routerMiddleware)
+            .calledWith(thunk)
+            .mockReturnValue(thunkMiddleware);
 
-    when(jest.spyOn(reduxUtils, 'compose'))
-        .calledWith(routerMiddleware, thunkMiddleware)
-        .mockReturnValue(composedMiddlewares);
+        when(jest.spyOn(reduxUtils, 'compose'))
+            .calledWith(routerMiddleware, thunkMiddleware)
+            .mockReturnValue(composedMiddlewares);
 
-    reducerFactoryStub = jest.spyOn(reducerFactory, 'getReducers');
-    reducerFactoryStub.mockReturnValue(reducer);
+        reducerFactoryStub = jest.spyOn(reducerFactory, 'getReducers');
+        reducerFactoryStub.mockReturnValue(reducer);
 
-    createStoreStub = jest.spyOn(reduxUtils, 'createStore');
-    createStoreStub.mockReturnValue(expectedStore);
+        createStoreStub = jest.spyOn(reduxUtils, 'createStore');
+        createStoreStub.mockReturnValue(expectedStore);
     }
 
     beforeEach(() => {

@@ -13,7 +13,6 @@ function mapDispatchToProps(dispatch, ownProps) {
     return {
         onSorting: () => {
             dispatch(actions.setSortOrder(ownProps.sortBy));
-
         }
     };
 }
@@ -27,6 +26,5 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
             ownProps.onSort();
         }
     };
-
 }
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Sort);

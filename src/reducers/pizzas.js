@@ -18,14 +18,14 @@ function loadMorePizzas(state, action) {
     return haveMore ? [
         ...state,
         ...action.data
-    ] :  state;
+    ] : state;
 }
 
 export default function (state = getDefaultState(), action) {
     const actions = {
         [FETCH_USER_LIST]: getDefaultState,
-        [STORE_PIZZA_LIST]: loadPizzList,
-        [STORE_MORE_PIZZAS]: loadMorePizzas
+        [STORE_MORE_PIZZAS]: loadMorePizzas,
+        [STORE_PIZZA_LIST]: loadPizzList
     };
     const reducers = actions[action.type];
 

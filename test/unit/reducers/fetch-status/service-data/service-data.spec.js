@@ -41,12 +41,13 @@ describe('Service Data Reducers', () => {
             };
 
             const resultedState = reducer(initialState, action);
+
             expect(resultedState).toStrictEqual('FETCHING');
         });
     });
 
     describe('Given Stored Action', () => {
-        const fetchAction ='ANY_FETCH_ACTION';
+        const fetchAction = 'ANY_FETCH_ACTION';
         const storeActions = ['STORE_ACTION_ONE', 'STORE_ACTION_TWO', 'STORE_ACTION_THREE'];
 
         function fetchedStatus(reducer, dataKey, action) {
@@ -88,7 +89,8 @@ describe('Service Data Reducers', () => {
         });
 
         describe('Given dataKey attribute', () => {
-             const dataKey = 'anyDataKey';
+            const dataKey = 'anyDataKey';
+
             it('should check for dataKey and return state as FETCHED', () => {
                 const reducer = makeServiceDataReducers(fetchAction, storeActions, dataKey);
 
@@ -103,7 +105,7 @@ describe('Service Data Reducers', () => {
                 storeActions.forEach((action) => {
                     unavailableStatus(reducer, dataKey, action);
                 });
-             });
+            });
         });
     });
 });

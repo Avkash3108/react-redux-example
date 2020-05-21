@@ -32,8 +32,8 @@ describe('Service Data Reducers', () => {
             const [reducerKey, fetchAction, storeActions, dataKey] = data;
             const fakeReducer = Symbol(reducerKey);
 
-            dataKey ? when(serviceDataReducersFactoryStub).calledWith(fetchAction, storeActions, dataKey).mockReturnValue(fakeReducer) :
-            when(serviceDataReducersFactoryStub).calledWith(fetchAction, storeActions).mockReturnValue(fakeReducer);
+            dataKey ? when(serviceDataReducersFactoryStub).calledWith(fetchAction, storeActions, dataKey).mockReturnValue(fakeReducer)
+                : when(serviceDataReducersFactoryStub).calledWith(fetchAction, storeActions).mockReturnValue(fakeReducer);
 
             acc[reducerKey] = fakeReducer;
 
@@ -54,7 +54,7 @@ describe('Service Data Reducers', () => {
     it('should return created combined reducer function', () => {
         const expectedReducer = Symbol('reducer');
 
-         when(combineReducersStub).calledWith(allServiceDataReducers()).mockReturnValue(expectedReducer);
+        when(combineReducersStub).calledWith(allServiceDataReducers()).mockReturnValue(expectedReducer);
 
         const actualReducer = combineServiceDataReducers();
 

@@ -16,12 +16,11 @@ function setLastFetchedPage(state, action) {
 
 export default function (state = getDefaultState(), action) {
     const actions = {
-        [FETCH_PIZZA_LIST] : getDefaultState,
-        [FETCH_USER_LIST] : getDefaultState,
-        [STORE_MORE_PIZZAS] : setLastFetchedPage,
-        [STORE_MORE_USERS] : setLastFetchedPage
+        [FETCH_PIZZA_LIST]: getDefaultState,
+        [FETCH_USER_LIST]: getDefaultState,
+        [STORE_MORE_PIZZAS]: setLastFetchedPage,
+        [STORE_MORE_USERS]: setLastFetchedPage
     };
-
 
     const reducers = actions[action.type];
 

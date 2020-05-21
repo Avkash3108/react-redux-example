@@ -20,7 +20,7 @@ describe('Full Page Loader Component', () => {
         });
 
         it('should not render anything', () => {
-             expect(component.type()).toBeNull();
+            expect(component.type()).toBeNull();
         });
     });
 
@@ -42,7 +42,6 @@ describe('Full Page Loader Component', () => {
             expect(spinnerContainer.is('div')).toBe(true);
             expect(spinnerContainer.hasClass('spinner')).toBe(true);
         });
-
 
         it('should have a spinners div', () => {
             const spinnerContainer = component.childAt(0);

@@ -17,7 +17,6 @@ describe('Last fetched page reducer', () => {
         expect(resultedState).toBe(1);
     });
 
-
     it('should return the provided state if action type is not handled', () => {
         const initialState = anyInitialState();
         const action = {

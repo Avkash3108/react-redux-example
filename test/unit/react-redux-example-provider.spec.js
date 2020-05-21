@@ -50,7 +50,7 @@ describe('React Redux Example Provider', () => {
         expect(router.type()).toStrictEqual(Router);
     });
 
-   it('should be configured with history', () => {
+    it('should be configured with history', () => {
         const component = render();
         const router = component.children();
 

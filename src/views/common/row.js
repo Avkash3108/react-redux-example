@@ -12,13 +12,13 @@ const Row = (props) => {
         <div
             className={'flex-row'}
         >
-             {getDataKeys(props.searchId).map((value, index) =>
+            {getDataKeys(props.searchId).map((value, index) =>
                 <Column
                     className={`flex-cell ${cleanDataClass(value)}`}
                     value={props.item[value]}
                     key={`${props.item.id}-${index}`}
                 />
-             )}
+            )}
         </div>
     );
 };
