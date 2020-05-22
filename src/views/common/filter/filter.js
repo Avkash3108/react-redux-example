@@ -8,7 +8,11 @@ function onChange(props, event) {
 const Filter = (props) => (
     <div className={'filter'}>
         <label>{props.label}</label>
-        <input type='text' onChange={onChange.bind(null, props)} name='filter'/>
+        <input
+            name='filter'
+            type='text'
+            onChange={onChange.bind(null, props)}
+        />
     </div>
 );
 

@@ -1,9 +1,9 @@
-const headerKeys = {
+export const headerKeys = {
     pizzas: ['PIZZA_NAME', 'PRICE', 'AVAILABLE_SIZES', 'CATEGORY'],
     users: ['FIRST_NAME', 'LAST_NAME', 'E_MAIL', 'ADDRESS', 'CONTACT']
 };
 
-const dataKeys = {
+export const dataKeys = {
     pizzas: ['name', 'price', 'availableSizes', 'category'],
     users: ['firstName', 'lastName', 'email', 'address', 'contact']
 };

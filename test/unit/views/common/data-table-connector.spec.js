@@ -11,7 +11,7 @@ import DataTable from '../../../../src/views/common/data-table';
 import * as actions from '../../../../src/action-creators/actions';
 
 const chance = new Chance();
-const searchId = chance.pickone(['users', 'pizzas']);
+let searchId = chance.pickone(['users', 'pizzas']);
 const serviceKey = getServiceReducerKey(searchId);
 const loadMoreServiceKey = getLoadMoreDataReducerKey(searchId);
 
@@ -126,20 +126,26 @@ describe('Data Table Connector', () => {
     });
 
     describe('Actions', () => {
-        it('should connect the data loading action', () => {
-            const props = any.props();
-            const dispatch = any.dispatch();
-            const fakeAction = Symbol('fakeAction');
-            const loadingActionName = {
-                'pizzas': 'loadPizzaList',
-                'users': 'loadUserList'
-            }[props.searchId];
+        [
+            'pizzas',
+            'users'
+        ].forEach((entity) => {
+            it(`should connect the data loading action for ${entity}`, () => {
+                searchId = entity;
+                const props = any.props();
+                const dispatch = any.dispatch();
+                const fakeAction = Symbol('fakeAction');
+                const loadingActionName = {
+                    'pizzas': 'loadPizzaList',
+                    'users': 'loadUserList'
+                }[props.searchId];
 
-            jest.spyOn(actions, loadingActionName).mockReturnValue(fakeAction);
-            render(any.state(), dispatch, props).props().loadData();
-            const dispatchedAction = dispatch.mock.calls[0][0];
+                jest.spyOn(actions, loadingActionName).mockReturnValue(fakeAction);
+                render(any.state(), dispatch, props).props().loadData();
+                const dispatchedAction = dispatch.mock.calls[0][0];
 
-            expect(dispatchedAction).toStrictEqual(fakeAction);
+                expect(dispatchedAction).toStrictEqual(fakeAction);
+            });
         });
     });
 });
