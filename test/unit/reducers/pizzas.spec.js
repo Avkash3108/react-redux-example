@@ -1,9 +1,14 @@
+import Chance from 'chance';
+
 import {
     FETCH_USER_LIST,
+    ITEMS_DELETED,
     STORE_PIZZA_LIST,
     STORE_MORE_PIZZAS
 } from '../../../src/actions';
 import reducer from '../../../src/reducers/pizzas';
+
+const chance = new Chance();
 
 describe('Pizza List Reducer', () => {
     function anyInitialState() {
@@ -101,5 +106,29 @@ describe('Pizza List Reducer', () => {
         const resultedState = reducer(initialState, action);
 
         expect(resultedState).toStrictEqual(initialState);
+    });
+
+    it('should remove selected pizzas on dispatching ITEMS_DELETED action', () => {
+        let initialState = anyInitialState();
+        const item1 = {
+            id: chance.natural()
+        };
+        const item2 = {
+            id: chance.natural()
+        };
+        const item3 = {
+            id: chance.natural()
+        };
+
+        initialState = initialState.concat([item1, item2, item3]);
+
+        const action = {
+            selectedIds: [`${item1.id}`, `${item2.id}`],
+            type: ITEMS_DELETED
+        };
+        const resultedState = reducer(initialState, action);
+        const expectedState = [item3];
+
+        expect(resultedState).toStrictEqual(expectedState);
     });
 });

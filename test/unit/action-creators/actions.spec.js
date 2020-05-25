@@ -427,6 +427,7 @@ describe('React Redux Example Action Creators', () => {
         it('should handle response of delete API', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
+                selectedIds: [],
                 type: actions.ITEMS_DELETED
             };
 
@@ -442,6 +443,7 @@ describe('React Redux Example Action Creators', () => {
         it('should dispatch null on service error', () => {
             const mockedData = ['anyData'];
             const expectedAction = {
+                selectedIds: [],
                 type: actions.ITEMS_DELETED
             };
 

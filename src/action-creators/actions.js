@@ -156,17 +156,19 @@ export function deleteRecords(searchId) {
             type: DELETE_ITEMS
         });
         const state = getState();
-        const userIds = Object.keys(state.selectedRows).reduce((acc, id) => {
+        const selectedIds = Object.keys(state.selectedRows).reduce((acc, id) => {
             if (state.selectedRows[id]) {
                 acc.push(id);
             }
             return acc;
-        }, []).join(',');
+        }, []);
+        const ids = selectedIds.join(',');
 
-        return deleteData(`/${searchId}/${userIds}`)
+        return deleteData(`/${searchId}/${ids}`)
             .catch(() => null)
             .then(() => {
                 dispatch({
+                    selectedIds,
                     type: ITEMS_DELETED
                 });
             });

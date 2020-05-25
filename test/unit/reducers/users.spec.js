@@ -1,9 +1,14 @@
+import Chance from 'chance';
+
 import {
     FETCH_PIZZA_LIST,
+    ITEMS_DELETED,
     STORE_USER_LIST,
     STORE_MORE_USERS
 } from '../../../src/actions';
 import reducer from '../../../src/reducers/users';
+
+const chance = new Chance();
 
 describe('User List Reducer', () => {
     function anyInitialState() {
@@ -101,5 +106,29 @@ describe('User List Reducer', () => {
         const resultedState = reducer(initialState, action);
 
         expect(resultedState).toStrictEqual(initialState);
+    });
+
+    it('should remove selected users on dispatching ITEMS_DELETED action', () => {
+        let initialState = anyInitialState();
+        const item1 = {
+            id: chance.natural()
+        };
+        const item2 = {
+            id: chance.natural()
+        };
+        const item3 = {
+            id: chance.natural()
+        };
+
+        initialState = initialState.concat([item1, item2, item3]);
+
+        const action = {
+            selectedIds: [`${item1.id}`, `${item3.id}`],
+            type: ITEMS_DELETED
+        };
+        const resultedState = reducer(initialState, action);
+        const expectedState = [item2];
+
+        expect(resultedState).toStrictEqual(expectedState);
     });
 });

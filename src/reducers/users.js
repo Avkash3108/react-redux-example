@@ -1,5 +1,6 @@
 import {
     FETCH_PIZZA_LIST,
+    ITEMS_DELETED,
     STORE_USER_LIST,
     STORE_MORE_USERS
 } from '../actions';
@@ -21,9 +22,16 @@ function loadMoreUsers(state, action) {
     ] : state;
 }
 
+function removeDeletedUsers(state, action) {
+    return state.filter((item) => {
+        return action.selectedIds.indexOf(`${item.id}`) === -1;
+    });
+}
+
 export default function (state = getDefaultState(), action) {
     const actions = {
         [FETCH_PIZZA_LIST]: getDefaultState,
+        [ITEMS_DELETED]: removeDeletedUsers,
         [STORE_MORE_USERS]: loadMoreUsers,
         [STORE_USER_LIST]: loadUserList
     };
