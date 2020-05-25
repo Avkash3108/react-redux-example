@@ -12,6 +12,7 @@ const chance = new Chance();
 describe('Container component', () => {
     const anyProps = () => {
         return {
+            deleteData: jest.fn(),
             loadData: jest.fn(),
             loadMoreData: jest.fn(),
             resetState: jest.fn(),
@@ -63,7 +64,7 @@ describe('Container component', () => {
     it('should render Data Table', () => {
         const props = anyProps();
         const component = render(props);
-        const tableComponent = component.childAt(1);
+        const tableComponent = component.childAt(2);
 
         expect(tableComponent.type()).toStrictEqual(DataTable);
         expect(tableComponent.props().searchId).toStrictEqual(props.searchId);
@@ -73,9 +74,10 @@ describe('Container component', () => {
     it('should render Full Page Loader', () => {
         const props = anyProps();
         const component = render(props);
-        const loaderComponent = component.childAt(2);
+        const index = 3;
+        const loaderComponent = component.childAt(index);
 
         expect(loaderComponent.type()).toStrictEqual(FullPageLoader);
-        expect(loaderComponent.props().servicesToCheck).toStrictEqual(['fetchPizzas', 'fetchUsers']);
+        expect(loaderComponent.props().servicesToCheck).toStrictEqual(['deleteItems', 'fetchPizzas', 'fetchUsers']);
     });
 });

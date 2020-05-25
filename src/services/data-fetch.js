@@ -14,3 +14,12 @@ export const fetchData = (endpoint, queryObject = {}) => {
         .then((response) => response.json())
         .catch(throwError);
 };
+
+export const deleteData = (endpoint) => {
+    const options = getDefaultFetchOptions();
+
+    options.method = 'DELETE';
+    return fetch(endpoint, options)
+        .then((response) => response.json())
+        .catch(throwError);
+};

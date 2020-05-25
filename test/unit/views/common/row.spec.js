@@ -7,6 +7,7 @@ import {
 } from '../../../../src/helpers';
 import Row from '../../../../src/views/common/row';
 import Column from '../../../../src/views/common/column';
+import Checkbox from '../../../../src/views/common/checkbox';
 
 describe('Row component', () => {
     const getItems = () => {
@@ -37,19 +38,29 @@ describe('Row component', () => {
         expect(component.hasClass('flex-row')).toBe(true);
     });
 
+    it('should render checkbox column', () => {
+        const props = anyProps();
+        const component = render(props);
+        const checkboxColumn = component.childAt(0);
+
+        expect(checkboxColumn.type()).toStrictEqual(Column);
+        expect(checkboxColumn.hasClass('flex-cell checkbox')).toBe(true);
+        expect(checkboxColumn.childAt(0).type()).toStrictEqual(Checkbox);
+    });
+
     it('should render columns based on given search id', () => {
         const props = anyProps();
         const dataKays = getDataKeys(props.searchId);
         const component = render(props);
 
         dataKays.forEach((dataKay, index) => {
-            const columnComponent = component.childAt(index);
+            const columnComponent = component.childAt(index + 1);
             const className = `flex-cell ${cleanDataClass(dataKay)}`;
             const value = props.item[dataKay];
 
             expect(columnComponent.type()).toStrictEqual(Column);
             expect(columnComponent.hasClass(className)).toBe(true);
-            expect(columnComponent.props().value).toStrictEqual(value);
+            expect(columnComponent.props().children).toStrictEqual(value);
         });
     });
 });

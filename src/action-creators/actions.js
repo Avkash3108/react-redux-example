@@ -1,17 +1,20 @@
 import {
+    DELETE_ITEMS,
     FETCH_PIZZA_LIST,
     FETCH_USER_LIST,
     FETCH_MORE_PIZZAS,
     FETCH_MORE_USERS,
+    ITEMS_DELETED,
+    ON_SELECT_ROW,
+    RESET_STATE,
     STORE_MORE_PIZZAS,
     STORE_MORE_USERS,
     SET_FILTER,
     SET_SORT_ORDER,
     STORE_PIZZA_LIST,
-    STORE_USER_LIST,
-    RESET_STATE
+    STORE_USER_LIST
 } from '../actions';
-import {fetchData} from '../services/data-fetch';
+import {deleteData, fetchData} from '../services/data-fetch';
 
 export function loadPizzaList() {
     return (dispatch, getState) => {
@@ -137,5 +140,35 @@ export function setSortOrder(sortBy) {
 export function resetState() {
     return {
         type: RESET_STATE
+    };
+}
+
+export function onSelectedRow(id) {
+    return {
+        id,
+        type: ON_SELECT_ROW
+    };
+}
+
+export function deleteRecords(searchId) {
+    return (dispatch, getState) => {
+        dispatch({
+            type: DELETE_ITEMS
+        });
+        const state = getState();
+        const userIds = Object.keys(state.selectedRows).reduce((acc, id) => {
+            if (state.selectedRows[id]) {
+                acc.push(id);
+            }
+            return acc;
+        }, []).join(',');
+
+        return deleteData(`/${searchId}/${userIds}`)
+            .catch(() => null)
+            .then(() => {
+                dispatch({
+                    type: ITEMS_DELETED
+                });
+            });
     };
 }

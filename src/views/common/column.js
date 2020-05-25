@@ -5,15 +5,14 @@ const Column = (props) => (
     <div
         className={`${props.className}`}
     >
-        {props.value}
+        {props.children}
     </div>
 );
 
 Column.displayName = 'Column';
 Column.propTypes = {
-    className: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired
-
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string.isRequired
 };
 
 export default Column;

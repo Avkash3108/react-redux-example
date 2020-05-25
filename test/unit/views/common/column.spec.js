@@ -3,11 +3,15 @@ import {shallow} from 'enzyme';
 
 import Column from '../../../../src/views/common/column';
 
+const MockChildComponent = () => (<div/>);
+
 describe('Column component', () => {
     const anyProps = () => {
         return {
-            className: 'test-class',
-            value: 'test'
+            children: (
+                <MockChildComponent/>
+            ),
+            className: 'test-class'
         };
     };
     const render = (props = anyProps()) => {
@@ -27,10 +31,10 @@ describe('Column component', () => {
         expect(component.hasClass(props.className)).toBe(true);
     });
 
-    it('should render value provided in props', () => {
+    it('should render provided children in props', () => {
         const props = anyProps();
         const component = render(props);
 
-        expect(component.text()).toBe(props.value);
+        expect(component.contains(props.children)).toStrictEqual(true);
     });
 });

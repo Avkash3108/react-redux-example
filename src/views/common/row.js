@@ -6,18 +6,28 @@ import {
     getDataKeys
 } from '../../helpers';
 import Column from './column';
+import Checkbox from './checkbox';
 
 const Row = (props) => {
     return (
         <div
             className={'flex-row'}
         >
+            <Column
+                className={'flex-cell checkbox'}
+                key={`${props.item.id}-${props.searchId}`}
+            >
+                <Checkbox
+                    id={props.item.id}
+                />
+            </Column>
             {getDataKeys(props.searchId).map((value, index) =>
                 <Column
                     className={`flex-cell ${cleanDataClass(value)}`}
-                    value={props.item[value]}
                     key={`${props.item.id}-${index}`}
-                />
+                >
+                    {props.item[value]}
+                </Column>
             )}
         </div>
     );

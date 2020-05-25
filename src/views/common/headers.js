@@ -15,6 +15,7 @@ const Headers = (props) => {
         <div
             className={'flex-row header'}
         >
+            <div className={'flex-cell checkbox'}/>
             {getHeaderKeys(props.searchId).map((label, index) =>
                 <Header
                     className={`flex-cell ${cleanHeaderClass(label)}`}

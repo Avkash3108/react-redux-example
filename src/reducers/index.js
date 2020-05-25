@@ -5,6 +5,7 @@ import filter from './filter';
 import sort from './sort-order';
 import routing from './routing';
 import users from './users';
+import selectedRows from './selected-rows';
 import {combineFetchStatusReducers} from './fetch-status';
 import allDataFetched from './all-data-fetched';
 import lastFetchedPage from './last-fetched-page';
@@ -17,6 +18,7 @@ export function getReducers() {
         lastFetchedPage,
         pizzas,
         routing,
+        selectedRows,
         sort,
         users
     };

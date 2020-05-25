@@ -11,6 +11,9 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
     return {
+        deleteData: () => {
+            dispatch(actions.deleteRecords('pizzas'));
+        },
         loadData: () => {
             dispatch(actions.loadPizzaList());
         },

@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {when} from 'jest-when';
 
 import UserTableConnector from '../../../../src/views/users';
 import * as actions from '../../../../src/action-creators/actions';
@@ -70,6 +71,20 @@ describe('User Table Connector', () => {
 
             jest.spyOn(actions, 'resetState').mockReturnValue(fakeAction);
             render(any.state(), dispatch, props).props().resetState();
+            const dispatchedAction = dispatch.mock.calls[0][0];
+
+            expect(dispatchedAction).toStrictEqual(fakeAction);
+        });
+
+        it('should connect delete data action', () => {
+            const props = any.props();
+            const dispatch = any.dispatch();
+            const fakeAction = Symbol('fakeAction');
+
+            when(jest.spyOn(actions, 'deleteRecords'))
+                .calledWith('users')
+                .mockReturnValue(fakeAction);
+            render(any.state(), dispatch, props).props().deleteData();
             const dispatchedAction = dispatch.mock.calls[0][0];
 
             expect(dispatchedAction).toStrictEqual(fakeAction);

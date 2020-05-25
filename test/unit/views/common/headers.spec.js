@@ -32,13 +32,21 @@ describe('Headers component', () => {
         expect(component.hasClass('flex-row header')).toBe(true);
     });
 
+    it('should render a column for checkbox placeholder', () => {
+        const component = render();
+        const checkboxPlaceHolder = component.childAt(0);
+
+        expect(checkboxPlaceHolder.is('div')).toBe(true);
+        expect(checkboxPlaceHolder.hasClass('flex-cell checkbox')).toBe(true);
+    });
+
     it('should render headers based on given search id', () => {
         const props = anyProps();
         const component = render(props);
         const headerKays = getHeaderKeys(props.searchId);
 
         headerKays.forEach((headerKey, index) => {
-            const headerComponent = component.childAt(index);
+            const headerComponent = component.childAt(index + 1);
             const className = `flex-cell ${cleanHeaderClass(headerKey)}`;
             const sortBy = getDataKeys(props.searchId)[index];
 

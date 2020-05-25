@@ -22,12 +22,13 @@ class Container extends React.Component {
         return (
             <div className={'table-container'}>
                 <Tabs/>
+                <button type='button' onClick={this.props.deleteData}>Delete</button>
                 <DataTable
                     searchId={this.props.searchId}
                     loadMoreData={this.props.loadMoreData}
                 />
                 <FullPageLoader
-                    servicesToCheck={['fetchPizzas', 'fetchUsers']}
+                    servicesToCheck={['deleteItems', 'fetchPizzas', 'fetchUsers']}
                 />
             </div>
         );
@@ -36,6 +37,7 @@ class Container extends React.Component {
 
 Container.displayName = 'Container';
 Container.propTypes = {
+    deleteData: PropTypes.func.isRequired,
     loadData: PropTypes.func.isRequired,
     loadMoreData: PropTypes.func.isRequired,
     resetState: PropTypes.func.isRequired,

@@ -24,6 +24,7 @@ describe('Service Data Reducers', () => {
         serviceDataReducersFactoryStub = jest.spyOn(serviceDataReducersFactory, 'makeServiceDataReducers').mockReturnValue(expectedReducers.serviceData);
 
         return [
+            ['deleteItems', actions.DELETE_ITEMS, [actions.ITEMS_DELETED], 'data'],
             ['fetchPizzas', actions.FETCH_PIZZA_LIST, [actions.STORE_PIZZA_LIST], 'data'],
             ['fetchMorePizzas', actions.FETCH_MORE_PIZZAS, [actions.STORE_MORE_PIZZAS], 'data'],
             ['fetchUsers', actions.FETCH_USER_LIST, [actions.STORE_USER_LIST], 'data'],

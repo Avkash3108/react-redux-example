@@ -5,6 +5,7 @@ import {makeServiceDataReducers} from './service-data';
 
 export function combineServiceDataReducers() {
     const serviceReducers = {
+        deleteItems: makeServiceDataReducers(actions.DELETE_ITEMS, [actions.ITEMS_DELETED], 'data'),
         fetchMorePizzas: makeServiceDataReducers(actions.FETCH_MORE_PIZZAS, [actions.STORE_MORE_PIZZAS], 'data'),
         fetchMoreUsers: makeServiceDataReducers(actions.FETCH_MORE_USERS, [actions.STORE_MORE_USERS], 'data'),
         fetchPizzas: makeServiceDataReducers(actions.FETCH_PIZZA_LIST, [actions.STORE_PIZZA_LIST], 'data'),

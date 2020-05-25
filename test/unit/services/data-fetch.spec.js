@@ -120,4 +120,69 @@ describe('Data Fetch Services', () => {
                 });
         });
     });
+
+    describe('Delete Service', () => {
+        it('should fetch data with given endpoint and options', () => {
+            const fetchStub = getFetchStub();
+            const endpoint = '/test/123';
+            const defaultFetchOptions = fetchHelpers.getDefaultFetchOptions();
+            const defaultFetchOptionsStub = jest.spyOn(fetchHelpers, 'getDefaultFetchOptions');
+
+            defaultFetchOptions.method = 'DELETE';
+
+            return dataFetchServices.deleteData(endpoint).then(() => {
+                expect(defaultFetchOptionsStub).toHaveBeenCalledTimes(1);
+                expect(fetchStub).toHaveBeenCalledTimes(1);
+                expect(fetchStub).toHaveBeenCalledWith(endpoint, defaultFetchOptions);
+            });
+        });
+
+        it('should return the success response', () => {
+            const response = anyResponse();
+            const endpoint = '/test/123';
+            const defaultFetchOptions = fetchHelpers.getDefaultFetchOptions();
+
+            defaultFetchOptions.method = 'DELETE';
+            getFetchStub(response);
+
+            return dataFetchServices.deleteData(endpoint, defaultFetchOptions).then((actualResponse) => {
+                expect(actualResponse).toStrictEqual(response);
+            });
+        });
+
+        it('should reject a known error', () => {
+            const expectedResponse = anyResponse();
+            const endpoint = '/test';
+            const defaultFetchOptions = fetchHelpers.getDefaultFetchOptions();
+
+            defaultFetchOptions.method = 'DELETE';
+            getFetchStub(expectedResponse, false);
+
+            return dataFetchServices.fetchData(endpoint, defaultFetchOptions)
+                .then(() => {
+                    throw new Error('Unexpected resolution');
+                })
+                .catch((error) => {
+                    expect(error).toStrictEqual(expectedResponse);
+                });
+        });
+
+        it('should reject a any unknown error', () => {
+            const anyUnknownError = anyResponse();
+            const endpoint = '/test';
+            const defaultFetchOptions = fetchHelpers.getDefaultFetchOptions();
+
+            defaultFetchOptions.method = 'DELETE';
+
+            getFetchStub(anyUnknownError, false);
+
+            return dataFetchServices.fetchData(endpoint, defaultFetchOptions)
+                .then(() => {
+                    throw new Error('Unexpected resolution');
+                })
+                .catch((error) => {
+                    expect(error).toStrictEqual(anyUnknownError);
+                });
+        });
+    });
 });

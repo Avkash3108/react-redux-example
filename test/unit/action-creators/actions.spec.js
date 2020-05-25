@@ -1,8 +1,12 @@
+import Chance from 'chance';
+
 import {
+    deleteRecords,
     loadPizzaList,
     loadMorePizzas,
     loadUserList,
     loadMoreUsers,
+    onSelectedRow,
     setFilter,
     setSortOrder,
     resetState
@@ -11,6 +15,7 @@ import * as actions from '../../../src/actions';
 import * as fetchServices from '../../../src/services/data-fetch';
 
 const stubRepository = () => jest.spyOn(fetchServices, 'fetchData');
+const chance = new Chance();
 
 describe('React Redux Example Action Creators', () => {
     const any = {
@@ -19,6 +24,7 @@ describe('React Redux Example Action Creators', () => {
             return {
                 filter: 'filter text',
                 lastFetchedPage: 1,
+                selectedRows: {},
                 sort: {
                     sortBy: 'test',
                     sortOrder: 'ASC'
@@ -332,11 +338,22 @@ describe('React Redux Example Action Creators', () => {
         });
     });
 
-    it('should dispatch an action to reset Lcm', () => {
+    it('should dispatch an action to reset', () => {
         const expectedAction = {
             type: actions.RESET_STATE
         };
         const action = resetState();
+
+        expect(action).toStrictEqual(expectedAction);
+    });
+
+    it('should dispatch an action to set selected row', () => {
+        const id = chance.natural();
+        const expectedAction = {
+            id,
+            type: actions.ON_SELECT_ROW
+        };
+        const action = onSelectedRow(id);
 
         expect(action).toStrictEqual(expectedAction);
     });
@@ -361,5 +378,80 @@ describe('React Redux Example Action Creators', () => {
         const action = setSortOrder(sortBy);
 
         expect(action).toStrictEqual(expectedAction);
+    });
+
+    describe('Delete records', () => {
+        let state, dispatch;
+
+        beforeEach(() => {
+            state = any.state();
+            dispatch = any.dispatch();
+        });
+
+        it('should let the system know that the delete action is running', () => {
+            const mockedData = ['anyData'];
+            const expectedAction = {
+                type: actions.DELETE_ITEMS
+            };
+
+            jest.spyOn(fetchServices, 'deleteData').mockReturnValue(Promise.resolve(mockedData));
+
+            return deleteRecords()(dispatch, () => state).then(() => {
+                const dispatchedAction = dispatch.mock.calls[0][0];
+
+                expect(dispatchedAction).toStrictEqual(expectedAction);
+            });
+        });
+
+        describe('Given some rows are selected', () => {
+            it('should call service with selected row ids', () => {
+                const id = chance.natural();
+                const anotherId = chance.natural();
+
+                state.selectedRows = {
+                    [`${anotherId}`]: true,
+                    [`${id}`]: true,
+                    'test': false
+                };
+                const mockedData = ['anyData'];
+                const repositoryStub = jest.spyOn(fetchServices, 'deleteData').mockReturnValue(Promise.resolve(mockedData));
+                const endpoint = `/users/${anotherId},${id}`;
+
+                return deleteRecords('users')(dispatch, () => state).then(() => {
+                    expect(repositoryStub).toHaveBeenCalledTimes(1);
+                    expect(repositoryStub).toHaveBeenCalledWith(endpoint);
+                });
+            });
+        });
+
+        it('should handle response of delete API', () => {
+            const mockedData = ['anyData'];
+            const expectedAction = {
+                type: actions.ITEMS_DELETED
+            };
+
+            jest.spyOn(fetchServices, 'deleteData').mockReturnValue(Promise.resolve(mockedData));
+
+            return deleteRecords('users')(dispatch, () => state).then(() => {
+                const dispatchedAction = dispatch.mock.calls[1][0];
+
+                expect(dispatchedAction).toStrictEqual(expectedAction);
+            });
+        });
+
+        it('should dispatch null on service error', () => {
+            const mockedData = ['anyData'];
+            const expectedAction = {
+                type: actions.ITEMS_DELETED
+            };
+
+            jest.spyOn(fetchServices, 'deleteData').mockReturnValue(Promise.reject(mockedData));
+
+            return deleteRecords('users')(dispatch, () => state).then(() => {
+                const dispatchedAction = dispatch.mock.calls[1][0];
+
+                expect(dispatchedAction).toStrictEqual(expectedAction);
+            });
+        });
     });
 });
