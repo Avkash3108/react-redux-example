@@ -1,4 +1,7 @@
-import {SET_FILTER} from '../../../src/actions';
+import {
+    RESET_STATE,
+    SET_FILTER
+} from '../../../src/actions';
 import reducer from '../../../src/reducers/filter';
 
 describe('Filter reducer', () => {
@@ -22,7 +25,17 @@ describe('Filter reducer', () => {
         expect(resultedState).toBe(initialState);
     });
 
-    it('should set filter value on chaning filter component', () => {
+    it('should clear filter on dispatching RESET_STATE', () => {
+        const initialState = anyInitialState();
+        const action = {
+            type: RESET_STATE
+        };
+        const resultedState = reducer(initialState, action);
+
+        expect(resultedState).toBe(initialState);
+    });
+
+    it('should set filter value on changing filter component', () => {
         const initialState = anyInitialState();
         const action = {
             type: SET_FILTER,

@@ -9,5 +9,7 @@
 	"AVAILABLE_SIZES": "Available Sizes",
 	"CATEGORY": "Category",
 	"PIZZA": "PIZZA",
-	"USER": "USER"
+	"USER": "USER",
+	"DELETE": "Delete",
+	"SEARCH": "Search"
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import {FormattedMessage} from 'react-intl';
 
 import Filter from '../../../../../src/views/common/filter/filter';
 
@@ -30,8 +31,8 @@ describe('Filter Component', () => {
         const props = anyProps();
         const component = render(props);
 
-        expect(component.childAt(0).type()).toStrictEqual('label');
-        expect(component.childAt(0).text()).toStrictEqual(props.label);
+        expect(component.childAt(0).type()).toStrictEqual(FormattedMessage);
+        expect(component.childAt(0).props().id).toStrictEqual(props.label);
     });
 
     it('should display search input', () => {

@@ -1,4 +1,7 @@
-import {SET_FILTER} from '../actions';
+import {
+    RESET_STATE,
+    SET_FILTER
+} from '../actions';
 
 function getDefaultState() {
     return '';
@@ -10,6 +13,7 @@ function setFilter(state, action) {
 
 export default function (state = getDefaultState(), action) {
     const actions = {
+        [RESET_STATE]: getDefaultState,
         [SET_FILTER]: setFilter
     };
 

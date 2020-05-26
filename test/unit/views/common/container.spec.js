@@ -6,6 +6,8 @@ import Container from '../../../../src/views/common/container';
 import FullPageLoader from '../../../../src/views/common/loader';
 import Tabs from '../../../../src/views/common/tabs/tabs';
 import DataTable from '../../../../src/views/common/data-table-connector';
+import Button from '../../../../src/views/common/button-connector';
+import Filter from '../../../../src/views/common/filter';
 
 const chance = new Chance();
 
@@ -59,6 +61,30 @@ describe('Container component', () => {
         const component = render();
 
         expect(component.childAt(0).type()).toStrictEqual(Tabs);
+    });
+
+    describe('Options Group', () => {
+        it('should render options group', () => {
+            const props = anyProps();
+            const optionContainer = render(props).childAt(1);
+
+            expect(optionContainer.is('div')).toBe(true);
+            expect(optionContainer.hasClass('options-group')).toBe(true);
+        });
+
+        it('should render filter and button in options group', () => {
+            const props = anyProps();
+            const optionContainer = render(props).childAt(1);
+            const filter = optionContainer.childAt(0);
+            const button = optionContainer.childAt(1);
+
+            expect(filter.type()).toStrictEqual(Filter);
+            expect(filter.props().label).toBe('SEARCH');
+            expect(filter.props().onFilter).toStrictEqual(props.loadData);
+            expect(button.type()).toStrictEqual(Button);
+            expect(button.props().label).toBe('DELETE');
+            expect(button.props().searchId).toBe(props.searchId);
+        });
     });
 
     it('should render Data Table', () => {

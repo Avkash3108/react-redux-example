@@ -6,7 +6,7 @@ import FilterConnector from '../../../../../src/views/common/filter';
 import * as actions from '../../../../../src/action-creators/actions';
 import Filter from '../../../../../src/views/common/filter/filter';
 
-describe('Sort Header Connector', () => {
+describe('Filter Connector', () => {
     const any = {
         dispatch: () => jest.fn(),
         props: () => {

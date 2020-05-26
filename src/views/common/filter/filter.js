@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {FormattedMessage} from 'react-intl';
 
 function onChange(props, event) {
     props.onFilter(event.target.value);
@@ -7,7 +8,7 @@ function onChange(props, event) {
 
 const Filter = (props) => (
     <div className={'filter'}>
-        <label>{props.label}</label>
+        <FormattedMessage id={props.label}/>
         <input
             name='filter'
             type='text'

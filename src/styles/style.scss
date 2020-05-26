@@ -16,11 +16,15 @@
 
     .table-container {
         display: block;
-        width: 70%;
+    }
+
+    .options-group {
+        float: right;
     }
 
     .flex-table {
         border-left: solid 1px $table-border;
+        clear: both;
         display: flex;
         flex-flow: column wrap;
         transition: 0.5s;
@@ -98,9 +102,11 @@
     }
 
     button {
-        background-color: $table-header;
-        color: white;
-        margin-top: 15px;
+        cursor: pointer;
+
+        &:disabled {
+            cursor: normal
+        }
     }
 
     .filter {

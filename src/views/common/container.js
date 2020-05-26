@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import FullPageLoader from './loader';
 import Tabs from './tabs/tabs';
 import DataTable from './data-table-connector';
+import Button from './button-connector';
+import Filter from './filter';
 
 class Container extends React.Component {
     constructor(props) {
@@ -22,7 +24,18 @@ class Container extends React.Component {
         return (
             <div className={'table-container'}>
                 <Tabs/>
-                <button type='button' onClick={this.props.deleteData}>Delete</button>
+                <div
+                    className={'options-group'}
+                >
+                    <Filter
+                        label={'SEARCH'}
+                        onFilter={this.props.loadData}
+                    />
+                    <Button
+                        label={'DELETE'}
+                        searchId={this.props.searchId}
+                    />
+                </div>
                 <DataTable
                     searchId={this.props.searchId}
                     loadMoreData={this.props.loadMoreData}
