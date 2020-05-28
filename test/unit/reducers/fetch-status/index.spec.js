@@ -1,10 +1,11 @@
 import * as reduxUtils from 'redux';
 
 import {combineFetchStatusReducers} from '../../../../src/reducers/fetch-status';
+import * as makeAlertsReducer from '../../../../src/reducers/fetch-status/alert-factory';
 import * as combineServiceDataReducers from '../../../../src/reducers/fetch-status/service-data';
 
 describe('Fetch Status Reducers', () => {
-    let combineReducersStub, combineServiceDataReducersStub;
+    let combineReducersStub, combineServiceDataReducersStub, makeAlertsReducerStub;
 
     beforeEach(() => {
         combineReducersStub = jest.spyOn(reduxUtils, 'combineReducers');
@@ -15,12 +16,13 @@ describe('Fetch Status Reducers', () => {
     });
 
     const expectedReducers = {
+        alerts: Symbol('alertData'),
         serviceData: Symbol('serviceData')
     };
 
     function expectedReducersStub() {
         combineServiceDataReducersStub = jest.spyOn(combineServiceDataReducers, 'combineServiceDataReducers').mockReturnValue(expectedReducers.serviceData);
-
+        makeAlertsReducerStub = jest.spyOn(makeAlertsReducer, 'makeAlerts').mockReturnValue(expectedReducers.alerts);
         return expectedReducers;
     }
 
@@ -30,6 +32,7 @@ describe('Fetch Status Reducers', () => {
         combineFetchStatusReducers();
 
         expect(combineServiceDataReducersStub).toHaveBeenCalledTimes(1);
+        expect(makeAlertsReducerStub).toHaveBeenCalledTimes(1);
         expect(combineReducersStub).toHaveBeenCalledTimes(1);
         expect(combineReducersStub).toHaveBeenCalledWith(expectedCompositeReducers);
     });

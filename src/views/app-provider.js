@@ -3,6 +3,7 @@ import React from 'react';
 import {IntlProvider} from 'react-intl';
 
 import messages from '../i18n/en.json';
+import Notifications from './notification-connector';
 
 function AppProvider(props) {
     return (
@@ -14,6 +15,7 @@ function AppProvider(props) {
                 className={'react-redux-example'}
             >
                 {props.children}
+                <Notifications/>
             </div>
         </IntlProvider>
     );

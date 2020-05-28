@@ -1,3 +1,4 @@
+export const CLOSE_ALERT = 'CLOSE_ALERT';
 export const DELETE_ITEMS = 'DELETE_ITEMS';
 export const FETCH_PIZZA_LIST = 'FETCH_PIZZA_LIST';
 export const FETCH_MORE_PIZZAS = 'FETCH_MORE_PIZZAS';

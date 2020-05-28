@@ -1,3 +1,4 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
 @import './variables';
 
 .react-redux-example {
@@ -7,6 +8,7 @@
 
     .sortable-icons {
         cursor: pointer;
+        margin-left: auto;
         padding: 5px;
 
         &.asc {
@@ -122,4 +124,26 @@
     @import './loader';
     @import './tabs';
     @import './checkbox';
+}
+
+.alert {
+    bottom: 0;
+    margin-bottom: 1px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: $backDropIndex + 1;
+}
+
+.alert-block-screen {
+    background: rgba(256, 256, 256, 0.4);
+    bottom: 0;
+    display: flex;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: $backDropIndex;
 }

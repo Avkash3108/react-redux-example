@@ -11,5 +11,7 @@
 	"PIZZA": "PIZZA",
 	"USER": "USER",
 	"DELETE": "Delete",
-	"SEARCH": "Search"
+	"SEARCH": "Search",
+	"RECORDS_DELETED": "{count} record(s) has been deleted successfully",
+	"DATA_LOADING_ERROR": "Error in data loading"
 }

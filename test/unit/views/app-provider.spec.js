@@ -4,6 +4,7 @@ import {shallow} from 'enzyme';
 
 import messages from '../../../src/i18n/en.json';
 import AppProvider from '../../../src/views/app-provider';
+import Notifications from '../../../src/views/notification-connector';
 
 const MockChildComponent = () => (<div/>);
 
@@ -45,5 +46,12 @@ describe('App Provide', () => {
 
             expect(stylingContainer.contains(props.children)).toStrictEqual(true);
         });
+    });
+
+    it('should render <Notifications/> for displaying informations', () => {
+        const stylingContainer = render().childAt(0);
+        const notifications = stylingContainer.childAt(1);
+
+        expect(notifications.type()).toStrictEqual(Notifications);
     });
 });

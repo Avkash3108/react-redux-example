@@ -1,4 +1,5 @@
 import {
+    CLOSE_ALERT,
     DELETE_ITEMS,
     FETCH_PIZZA_LIST,
     FETCH_USER_LIST,
@@ -172,5 +173,12 @@ export function deleteRecords(searchId) {
                     type: ITEMS_DELETED
                 });
             });
+    };
+}
+
+export function closeAlert(alertId) {
+    return {
+        alertId,
+        type: CLOSE_ALERT
     };
 }

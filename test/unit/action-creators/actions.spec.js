@@ -1,6 +1,7 @@
 import Chance from 'chance';
 
 import {
+    closeAlert,
     deleteRecords,
     loadPizzaList,
     loadMorePizzas,
@@ -338,46 +339,59 @@ describe('React Redux Example Action Creators', () => {
         });
     });
 
-    it('should dispatch an action to reset', () => {
-        const expectedAction = {
-            type: actions.RESET_STATE
-        };
-        const action = resetState();
+    describe('Other actions', () => {
+        it('should dispatch an action to reset', () => {
+            const expectedAction = {
+                type: actions.RESET_STATE
+            };
+            const action = resetState();
 
-        expect(action).toStrictEqual(expectedAction);
-    });
+            expect(action).toStrictEqual(expectedAction);
+        });
 
-    it('should dispatch an action to set selected row', () => {
-        const id = chance.natural();
-        const expectedAction = {
-            id,
-            type: actions.ON_SELECT_ROW
-        };
-        const action = onSelectedRow(id);
+        it('should dispatch an action to set selected row', () => {
+            const id = chance.natural();
+            const expectedAction = {
+                id,
+                type: actions.ON_SELECT_ROW
+            };
+            const action = onSelectedRow(id);
 
-        expect(action).toStrictEqual(expectedAction);
-    });
+            expect(action).toStrictEqual(expectedAction);
+        });
 
-    it('should dispatch an action to set filter value', () => {
-        const filterValue = 'test';
-        const expectedAction = {
-            type: actions.SET_FILTER,
-            value: filterValue
-        };
-        const action = setFilter(filterValue);
+        it('should dispatch an action to set filter value', () => {
+            const filterValue = 'test';
+            const expectedAction = {
+                type: actions.SET_FILTER,
+                value: filterValue
+            };
+            const action = setFilter(filterValue);
 
-        expect(action).toStrictEqual(expectedAction);
-    });
+            expect(action).toStrictEqual(expectedAction);
+        });
 
-    it('should dispatch an action to set sorting value', () => {
-        const sortBy = 'test';
-        const expectedAction = {
-            sortBy,
-            type: actions.SET_SORT_ORDER
-        };
-        const action = setSortOrder(sortBy);
+        it('should dispatch an action to set sorting value', () => {
+            const sortBy = 'test';
+            const expectedAction = {
+                sortBy,
+                type: actions.SET_SORT_ORDER
+            };
+            const action = setSortOrder(sortBy);
 
-        expect(action).toStrictEqual(expectedAction);
+            expect(action).toStrictEqual(expectedAction);
+        });
+
+        it('should dispatch an action to close alert', () => {
+            const alertId = 'test';
+            const expectedAction = {
+                alertId,
+                type: actions.CLOSE_ALERT
+            };
+            const action = closeAlert(alertId);
+
+            expect(action).toStrictEqual(expectedAction);
+        });
     });
 
     describe('Delete records', () => {
