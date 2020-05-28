@@ -3,8 +3,7 @@ import Chance from 'chance';
 import {
     CLOSE_ALERT,
     ITEMS_DELETED,
-    RESET_STATE,
-    STORE_USER_LIST
+    RESET_STATE
 } from '../../../../src/actions';
 import {makeAlerts} from '../../../../src/reducers/fetch-status/alert-factory';
 
@@ -85,15 +84,6 @@ describe('Alert factory reducer', () => {
             },
             selectedIds: ['anyId'],
             type: ITEMS_DELETED
-        },
-        {
-            alertOptions: {
-                alertType: 'danger',
-                autoClose: false,
-                message: 'Data loading error',
-                values: {}
-            },
-            type: STORE_USER_LIST
         }
     ].forEach((actionItem) => {
         it('should add alert in state on dispatching', () => {

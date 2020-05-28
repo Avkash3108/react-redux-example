@@ -1,8 +1,7 @@
 import {
     CLOSE_ALERT,
     ITEMS_DELETED,
-    RESET_STATE,
-    STORE_USER_LIST
+    RESET_STATE
 } from '../../actions';
 
 const autoCloseTiming = 6;
@@ -66,12 +65,7 @@ export function makeAlerts() {
             getValues: getDeletedCount,
             message: 'RECORDS_DELETED'
         }),
-        [RESET_STATE]: getDefaultState,
-        [STORE_USER_LIST]: makeAlert({
-            alertType: 'danger',
-            autoClose: false,
-            message: 'Data loading error'
-        })
+        [RESET_STATE]: getDefaultState
     };
 
     return (state = [], action) => {
