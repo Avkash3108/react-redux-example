@@ -1,5 +1,6 @@
-@import '../../node_modules/bootstrap/scss/bootstrap';
+
 @import './variables';
+@import './fonts/_font.scss';
 
 .react-redux-example {
     div {
@@ -74,9 +75,9 @@
             flex-flow: row nowrap;
             padding: 0.5em 0.5em;
             width: calc(100% / 4);
-            
+
             &.checkbox {
-                width: 60px
+                width: 60px;
             }
 
             &:hover {
@@ -96,6 +97,8 @@
             &.header {
                 .flex-cell {
                     background: $table-header;
+                    background-image: url("../assets/images/bg1.png");
+                    background-repeat: repeat;
                     border-top: solid 1px $table-border;
                     color: $white;
                 }
@@ -107,7 +110,7 @@
         cursor: pointer;
 
         &:disabled {
-            cursor: normal
+            cursor: normal;
         }
     }
 

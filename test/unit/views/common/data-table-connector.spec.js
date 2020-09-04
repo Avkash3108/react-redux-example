@@ -76,6 +76,17 @@ describe('Data Table Connector', () => {
         expect(component.props().data).toStrictEqual(state[props.searchId]);
     });
 
+    it('should connect empty data list when object is given', () => {
+        const props = any.props();
+        const dispatch = any.dispatch();
+        const state = any.state();
+
+        state[props.searchId] = {};
+        const component = render(state, dispatch, props);
+
+        expect(component.props().data).toStrictEqual([]);
+    });
+
     describe('Data Loading', () => {
         it('should connect dataLoading true when service status is FETCHING', () => {
             const state = any.state();

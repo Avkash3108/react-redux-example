@@ -1,0 +1,11 @@
+$fontName: 'ValidityScriptR_PERSONAL_USE';
+$fontPath: './fonts';
+
+$src: url("../assets/fonts/ValidityScriptR_PERSONAL_USE.ttf") format('truetype');
+
+@font-face {
+    font-family: $fontName;
+    font-style: normal;
+    font-weight: normal;
+    src: $src;
+}

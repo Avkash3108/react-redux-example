@@ -86,7 +86,7 @@ describe('Alert factory reducer', () => {
             type: ITEMS_DELETED
         }
     ].forEach((actionItem) => {
-        it('should add alert in state on dispatching', () => {
+        it(`should add alert in state on dispatching ${actionItem.type}`, () => {
             const alertId = chance.natural();
             const initialState = [
                 {
