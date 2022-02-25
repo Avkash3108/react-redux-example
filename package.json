@@ -46,7 +46,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@avkash3108/lint-config": "2.7.0",
+    "@avkash3108/lint-config": "2.8.0",
     "chance": "^1.1.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
