@@ -10,9 +10,10 @@ import * as actions from '../../action-creators/actions';
 function mapStateToProps(state, ownProps) {
     const initialFetchStatus = state.fetchStatus.serviceData[getServiceReducerKey(ownProps.searchId)];
     const dataLoading = initialFetchStatus === 'FETCHING' || initialFetchStatus === 'NA';
+
     return {
         allDataFetched: state.allDataFetched,
-        data:  Array.isArray(state[ownProps.searchId]) ? state[ownProps.searchId] : [],
+        data: Array.isArray(state[ownProps.searchId]) ? state[ownProps.searchId] : [],
         dataLoading,
         moreDataLoading: state.fetchStatus.serviceData[getLoadMoreDataReducerKey(ownProps.searchId)] === 'FETCHING'
     };

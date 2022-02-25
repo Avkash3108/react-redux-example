@@ -28,9 +28,9 @@
   "license": "ISC",
   "dependencies": {
     "@avkash3108/json-server-fake-api": "1.3.0",
-    "@avkash3108/react_build_task": "4.0.2",
+    "@avkash3108/react_build_task": "4.3.0",
     "bootstrap": "^4.5.0",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.1",
@@ -51,7 +51,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "gh-pages": "^3.0.0",
-    "jest": "^25.4.0",
-    "jest-when": "^2.7.1"
+    "jest": "^27.5.1",
+    "jest-when": "^3.5.1"
   }
 }

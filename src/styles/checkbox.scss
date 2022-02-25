@@ -5,7 +5,7 @@
     .hidden-checkbox {
         border: 0;
         clip: rect(0 0 0 0);
-        clippath: inset(50%);
+        clip-path: inset(50%);
         height: 1px;
         margin: -1px;
         overflow: hidden;
@@ -13,32 +13,29 @@
         position: absolute;
         white-space: nowrap;
         width: 1px;
-
-        :focus {
-        }
     }
-    
+
     .style-checkbox {
+        border: 2px solid $table-header;
         border-radius: 3px;
-	border: 2px solid $table-header;
-    cursor: pointer;
-	display: inline-block;
-        width: 16px;
+        cursor: pointer;
+        display: inline-block;
         height: 16px;
-
-        &.checked {
-           background: $table-header;
-
-           .icon-checked {
-                visibility: visible;
-           }
-        }
+        width: 16px;
 
         .icon-checked {
             fill: none;
             stroke: $white;
             stroke-width: 2px;
             visibility: hidden;
+        }
+
+        &.checked {
+            background: $table-header;
+
+            .icon-checked {
+                visibility: visible;
+            }
         }
     }
 }
